@@ -1,6 +1,6 @@
 name: Logos
 form: $/pensoft/media/models/medialogos/fields.yaml
-modelClass: pensoft\Media\Models\MediaLogos
+modelClass: Pensoft\Media\Models\MediaLogos
 defaultRedirect: pensoft/media/logos
 create:
     redirect: 'pensoft/media/logos/update/:id'

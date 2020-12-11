@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/pressreleases/columns.yaml
-modelClass: pensoft\Media\Models\Pressreleases
+modelClass: Pensoft\Media\Models\Pressreleases
 title: Pressreleases
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

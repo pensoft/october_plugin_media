@@ -1,4 +1,4 @@
 title: Videos
-modelClass: pensoft\Media\Models\Videos
+modelClass: Pensoft\Media\Models\Videos
 toolbar:
     buttons: reorder_toolbar

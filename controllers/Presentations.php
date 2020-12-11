@@ -1,4 +1,4 @@
-<?php namespace pensoft\Media\Controllers;
+<?php namespace Pensoft\Media\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;

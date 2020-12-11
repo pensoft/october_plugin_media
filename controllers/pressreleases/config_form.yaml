@@ -1,6 +1,6 @@
 name: Pressreleases
 form: $/pensoft/media/models/pressreleases/fields.yaml
-modelClass: pensoft\Media\Models\Pressreleases
+modelClass: Pensoft\Media\Models\Pressreleases
 defaultRedirect: pensoft/media/pressreleases
 create:
     redirect: 'pensoft/media/pressreleases/update/:id'

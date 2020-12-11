@@ -1,4 +1,4 @@
-<?php namespace pensoft\Media\Models;
+<?php namespace Pensoft\Media\Models;
 
 use Model;
 

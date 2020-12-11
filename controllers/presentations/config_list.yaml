@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/presentations/columns.yaml
-modelClass: pensoft\Media\Models\Presentations
+modelClass: Pensoft\Media\Models\Presentations
 title: Presentations
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

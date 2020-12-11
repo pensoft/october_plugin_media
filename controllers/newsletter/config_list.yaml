@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/newsletters/columns.yaml
-modelClass: pensoft\Media\Models\Newsletters
+modelClass: Pensoft\Media\Models\Newsletters
 title: Newsletter
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

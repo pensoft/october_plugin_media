@@ -1,4 +1,4 @@
 title: Logos
-modelClass: pensoft\Media\Models\MediaLogos
+modelClass: Pensoft\Media\Models\MediaLogos
 toolbar:
     buttons: reorder_toolbar

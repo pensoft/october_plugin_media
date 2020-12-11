@@ -1,4 +1,4 @@
 title: Presentations
-modelClass: pensoft\Media\Models\Presentations
+modelClass: Pensoft\Media\Models\Presentations
 toolbar:
     buttons: reorder_toolbar

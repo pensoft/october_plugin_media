@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/videos/columns.yaml
-modelClass: pensoft\Media\Models\Videos
+modelClass: Pensoft\Media\Models\Videos
 title: Videos
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

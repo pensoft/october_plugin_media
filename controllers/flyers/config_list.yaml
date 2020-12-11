@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/flyers/columns.yaml
-modelClass: pensoft\Media\Models\Flyers
+modelClass: Pensoft\Media\Models\Flyers
 title: Flyers
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

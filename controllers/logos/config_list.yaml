@@ -1,5 +1,5 @@
 list: $/pensoft/media/models/medialogos/columns.yaml
-modelClass: pensoft\Media\Models\MediaLogos
+modelClass: Pensoft\Media\Models\MediaLogos
 title: Logos
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

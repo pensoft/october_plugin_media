@@ -1,6 +1,6 @@
 name: Flyers
 form: $/pensoft/media/models/flyers/fields.yaml
-modelClass: pensoft\Media\Models\Flyers
+modelClass: Pensoft\Media\Models\Flyers
 defaultRedirect: pensoft/media/flyers
 create:
     redirect: 'pensoft/media/flyers/update/:id'

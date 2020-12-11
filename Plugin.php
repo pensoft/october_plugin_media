@@ -1,4 +1,4 @@
-<?php namespace pensoft\Media;
+<?php namespace Pensoft\Media;
 
 use System\Classes\PluginBase;
 
