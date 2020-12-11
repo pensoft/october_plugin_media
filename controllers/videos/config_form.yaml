@@ -1,0 +1,10 @@
+name: Videos
+form: $/pensoft/media/models/videos/fields.yaml
+modelClass: pensoft\Media\Models\Videos
+defaultRedirect: pensoft/media/videos
+create:
+    redirect: 'pensoft/media/videos/update/:id'
+    redirectClose: pensoft/media/videos
+update:
+    redirect: pensoft/media/videos
+    redirectClose: pensoft/media/videos

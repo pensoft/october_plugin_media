@@ -1,0 +1,4 @@
+title: Videos
+modelClass: pensoft\Media\Models\Videos
+toolbar:
+    buttons: reorder_toolbar

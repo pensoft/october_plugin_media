@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    flyer:
+        label: Flyer
+        type: partial
+        searchable: true
+        sortable: true
+        path: $/pensoft/media/models/flyers/_file.htm

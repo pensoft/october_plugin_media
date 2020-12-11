@@ -1,0 +1,10 @@
+name: Newsletter
+form: $/pensoft/media/models/newsletters/fields.yaml
+modelClass: pensoft\Media\Models\Newsletters
+defaultRedirect: pensoft/media/newsletter
+create:
+    redirect: 'pensoft/media/newsletter/update/:id'
+    redirectClose: pensoft/media/newsletter
+update:
+    redirect: pensoft/media/newsletter
+    redirectClose: pensoft/media/newsletter

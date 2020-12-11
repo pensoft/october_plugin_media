@@ -1,0 +1,27 @@
+fields:
+  name:
+    label: 'Name'
+    span: left
+    required: 1
+    type: text
+  date:
+    label: 'Date'
+    mode: date
+    span: right
+    default: now
+    type: datepicker
+  description:
+    label: 'Description'
+    span: left
+    required: 0
+    type: text
+  link:
+    label: 'Link EurekAlert!'
+    span: left
+    required: 0
+    type: text
+  link_cordis:
+    label: 'Link CORDIS Wire'
+    span: left
+    required: 0
+    type: text

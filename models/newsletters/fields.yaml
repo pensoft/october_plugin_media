@@ -1,0 +1,33 @@
+fields:
+  name:
+    label: 'Name'
+    span: left
+    required: 1
+    type: text
+  date:
+    label: 'Date'
+    mode: date
+    span: right
+    default: now
+    type: datepicker
+  newsletter_image:
+    label: 'Newsletter image'
+    mode: image
+    fileTypes: svg,png,jpg
+    imageWidth: '200'
+    useCaption: true
+    thumbOptions:
+      mode: crop
+      extension: auto
+    span: right
+    type: fileupload
+  file:
+    label: 'File'
+    span: left
+    mode: file
+    useCaption: true
+    thumbOptions:
+      mode: crop
+      extension: auto
+    required: 1
+    type: fileupload

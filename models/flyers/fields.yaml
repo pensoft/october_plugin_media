@@ -1,0 +1,27 @@
+fields:
+  name:
+    label: 'Name'
+    span: left
+    required: 1
+    type: text
+  flyer_image:
+    label: 'Flyer image'
+    mode: image
+    imageWidth: '200'
+    useCaption: true
+    fileTypes: svg,png,jpg
+    thumbOptions:
+      mode: crop
+      extension: auto
+    span: right
+    type: fileupload
+  file:
+    label: 'File'
+    span: left
+    mode: file
+    useCaption: true
+    thumbOptions:
+      mode: crop
+      extension: auto
+    required: 1
+    type: fileupload

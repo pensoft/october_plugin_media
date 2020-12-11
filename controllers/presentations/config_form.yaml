@@ -1,0 +1,10 @@
+name: Presentations
+form: $/pensoft/media/models/presentations/fields.yaml
+modelClass: pensoft\Media\Models\Presentations
+defaultRedirect: pensoft/media/presentations
+create:
+    redirect: 'pensoft/media/presentations/update/:id'
+    redirectClose: pensoft/media/presentations
+update:
+    redirect: pensoft/media/presentations
+    redirectClose: pensoft/media/presentations

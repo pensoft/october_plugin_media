@@ -1,0 +1,4 @@
+title: Logos
+modelClass: pensoft\Media\Models\MediaLogos
+toolbar:
+    buttons: reorder_toolbar

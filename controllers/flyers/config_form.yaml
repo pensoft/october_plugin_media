@@ -1,0 +1,10 @@
+name: Flyers
+form: $/pensoft/media/models/flyers/fields.yaml
+modelClass: pensoft\Media\Models\Flyers
+defaultRedirect: pensoft/media/flyers
+create:
+    redirect: 'pensoft/media/flyers/update/:id'
+    redirectClose: pensoft/media/flyers
+update:
+    redirect: pensoft/media/flyers
+    redirectClose: pensoft/media/flyers

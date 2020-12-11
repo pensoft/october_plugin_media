@@ -1,0 +1,4 @@
+title: Presentations
+modelClass: pensoft\Media\Models\Presentations
+toolbar:
+    buttons: reorder_toolbar

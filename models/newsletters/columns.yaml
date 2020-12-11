@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    date:
+      label: 'Date'
+      type: text
+      searchable: true
+      sortable: true
+    newsletter:
+        label: newsletter
+        type: partial
+        searchable: true
+        sortable: true
+        path: $/pensoft/media/models/newsletters/_file.htm

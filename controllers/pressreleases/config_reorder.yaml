@@ -1,0 +1,4 @@
+title: Pressreleases
+modelClass: pensoft\Media\Models\Pressreleases
+toolbar:
+    buttons: reorder_toolbar
