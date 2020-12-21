@@ -7,18 +7,22 @@ class BuilderTableCreatePensoftMediaPresentations extends Migration
 {
     public function up()
     {
-        Schema::create('pensoft_media_presentations', function($table)
-        {
-            $table->engine = 'InnoDB';
-            $table->increments('id')->unsigned();
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
-            $table->string('name');
-        });
+        if (!Schema::hasTable('pensoft_media_presentations')) {
+            Schema::create('pensoft_media_presentations', function($table)
+            {
+                $table->engine = 'InnoDB';
+                $table->increments('id')->unsigned();
+                $table->timestamp('created_at')->nullable();
+                $table->timestamp('updated_at')->nullable();
+                $table->string('name');
+            });
+        }
     }
     
     public function down()
     {
-        Schema::dropIfExists('pensoft_media_presentations');
+        if (Schema::hasTable('pensoft_media_presentations')) {
+            Schema::dropIfExists('pensoft_media_presentations');
+        }
     }
 }
