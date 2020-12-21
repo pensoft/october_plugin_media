@@ -14,6 +14,6 @@ class Pressreleases extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('pensoft.Media', 'main-menu-item', 'side-menu-media-pressreleases');
+        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-media-pressreleases');
     }
 }

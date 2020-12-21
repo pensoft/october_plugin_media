@@ -14,6 +14,6 @@ class Logos extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('pensoft.Media', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-item');
     }
 }
