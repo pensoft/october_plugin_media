@@ -8,7 +8,7 @@ use Model;
 class Videos extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-//	use \October\Rain\Database\Traits\NestedTree;
+	use \October\Rain\Database\Traits\NestedTree;
     
 
     /**
