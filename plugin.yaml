@@ -34,3 +34,7 @@ navigation:
         label: Videos
         url: pensoft/media/videos
         icon: oc-icon-video-camera
+      side-menu-media-webinars:
+        label: Webinars
+        url: pensoft/media/webinars
+        icon: oc-icon-headphones
