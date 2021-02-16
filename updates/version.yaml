@@ -36,4 +36,5 @@
     - 'Copy data and fiels from videos to webinars'
 1.1.5:
     - 'Copy data and fiels from videos to webinars'
-    - update_pensoft_media_webinars.php
+1.1.6:
+    - 'Fix'
