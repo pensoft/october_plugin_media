@@ -20,4 +20,8 @@ class Pressreleases extends Model
      */
     public $rules = [
     ];
+
+	protected $jsonable = [
+		'link'
+	];
 }
