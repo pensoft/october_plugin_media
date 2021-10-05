@@ -13,9 +13,3 @@ columns:
     description:
         label: description
         type: text
-    link:
-        label: 'Link EurekAlert!'
-        type: text
-    link_cordis:
-        label: 'Link CORDIS Wire'
-        type: text

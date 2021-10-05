@@ -43,3 +43,5 @@
     - builder_table_update_pensoft_media_logos.php
 1.1.8:
     - 'Press release links jsonable'
+1.1.9:
+    - 'Press release backend list'
