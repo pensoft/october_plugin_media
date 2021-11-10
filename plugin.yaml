@@ -1,40 +1,44 @@
 plugin:
-  name: 'pensoft.media::lang.plugin.name'
-  description: 'pensoft.media::lang.plugin.description'
-  author: 'Pensoft'
-  icon: oc-icon-play-circle-o
-  homepage: ''
-navigation:
-  media-center:
-    label: Media center
-    url: pensoft/media/logos
+    name: 'pensoft.media::lang.plugin.name'
+    description: 'pensoft.media::lang.plugin.description'
+    author: Pensoft
     icon: oc-icon-play-circle-o
-    sideMenu:
-      side-menu-media-logos:
-        label: Logos
+    homepage: ''
+navigation:
+    media-center:
+        label: 'Media center'
         url: pensoft/media/logos
-        icon: oc-icon-file-image-o
-      side-menu-media-flyers:
-        label: Flyers
-        url: pensoft/media/flyers
-        icon: oc-icon-image
-      side-menu-media-newsletter:
-        label: Newsletter
-        url: pensoft/media/newsletter
-        icon: oc-icon-newspaper-o
-      side-menu-media-presentations:
-        label: Presentations
-        url: pensoft/media/presentations
-        icon: oc-icon-file-powerpoint-o
-      side-menu-media-pressreleases:
-        label: 'Press Releases'
-        url: pensoft/media/pressreleases
-        icon: oc-icon-twitch
-      side-menu-media-videos:
-        label: Videos
-        url: pensoft/media/videos
-        icon: oc-icon-video-camera
-      side-menu-media-webinars:
-        label: Webinars
-        url: pensoft/media/webinars
-        icon: oc-icon-headphones
+        icon: oc-icon-play-circle-o
+        sideMenu:
+            side-menu-media-logos:
+                label: Logos
+                url: pensoft/media/logos
+                icon: oc-icon-file-image-o
+            side-menu-media-flyers:
+                label: Flyers
+                url: pensoft/media/flyers
+                icon: oc-icon-image
+            side-menu-media-newsletter:
+                label: Newsletter
+                url: pensoft/media/newsletter
+                icon: oc-icon-newspaper-o
+            side-menu-media-presentations:
+                label: Presentations
+                url: pensoft/media/presentations
+                icon: oc-icon-file-powerpoint-o
+            side-menu-media-pressreleases:
+                label: 'Press Releases'
+                url: pensoft/media/pressreleases
+                icon: oc-icon-twitch
+            side-menu-media-videos:
+                label: Videos
+                url: pensoft/media/videos
+                icon: oc-icon-video-camera
+            side-menu-media-webinars:
+                label: Webinars
+                url: pensoft/media/webinars
+                icon: oc-icon-headphones
+            side-menu-item:
+                label: Grapgics
+                url: pensoft/media/graphics
+                icon: icon-file-image-o

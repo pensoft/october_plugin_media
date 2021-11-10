@@ -1,0 +1,10 @@
+name: Graphics
+form: $/pensoft/media/models/graphic/fields.yaml
+modelClass: Pensoft\Media\Models\Graphic
+defaultRedirect: pensoft/media/graphics
+create:
+    redirect: 'pensoft/media/graphics/update/:id'
+    redirectClose: pensoft/media/graphics
+update:
+    redirect: pensoft/media/graphics
+    redirectClose: pensoft/media/graphics
