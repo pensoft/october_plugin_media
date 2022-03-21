@@ -39,6 +39,6 @@ navigation:
                 url: pensoft/media/webinars
                 icon: oc-icon-headphones
             side-menu-item:
-                label: Grapgics
+                label: Graphics
                 url: pensoft/media/graphics
                 icon: icon-file-image-o
