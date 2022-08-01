@@ -50,3 +50,6 @@
     - builder_table_create_pensoft_media_graphics.php
 1.1.11:
     - 'New section graphics'
+1.1.12:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos.php
