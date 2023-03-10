@@ -13,7 +13,7 @@ columns:
         path: $/pensoft/media/models/flyers/_file.htm
     revisions:
         type: partial
-        path: ~/plugins/saurabhdhariwal/revisionhistory/models/revisionhistory/partials/_content_column.htm
+        path: ~/plugins/pensoft/media/partials/_revision.htm
         searchable: false
         sortable: false
         valueFrom: id
