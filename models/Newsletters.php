@@ -18,6 +18,19 @@ class Newsletters extends Model
 
     // Add for revisions on particular field
     protected $revisionable = ["id","name"];
+
+    /**
+     * 
+     */
+    protected $fillable = [
+        'name',
+        'date',
+        'newsletter_image',
+        'file',
+        'url',
+        // Other fields...
+    ];
+
     /**
      * @var string The database table used by the model.
      */

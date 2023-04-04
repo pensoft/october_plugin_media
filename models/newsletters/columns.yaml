@@ -16,6 +16,11 @@ columns:
         searchable: true
         sortable: true
         path: $/pensoft/media/models/newsletters/_file.htm
+    url:
+        label: url
+        type: text
+        searchable: true
+        sortable: true
     revisions:
         type: partial
         path: ~/plugins/pensoft/media/partials/_revision.htm
