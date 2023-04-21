@@ -62,3 +62,6 @@
 1.1.16:
     - 'Updated table pensoft_media_newsletters'
     - builder_table_update_pensoft_media_newsletters.php
+1.1.17:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_2.php
