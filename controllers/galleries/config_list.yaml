@@ -1,6 +1,6 @@
-list: $/pensoft/media/models/graphic/columns.yaml
-modelClass: Pensoft\Media\Models\Graphic
-title: Graphics
+list: $/pensoft/media/models/galleries/columns.yaml
+modelClass: Pensoft\Media\Models\Galleries
+title: Galleries
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'pensoft/media/graphics/update/:id'
+recordUrl: 'pensoft/media/galleries/update/:id'

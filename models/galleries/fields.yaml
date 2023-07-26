@@ -1,0 +1,28 @@
+fields:
+    name:
+        label: Title
+        span: auto
+        type: text
+    images:
+        label: Images
+        mode: image
+        imageWidth: '270'
+        fileTypes: 'svg,png,jpg'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    related:
+        label: 'Related to article'
+        type: checkbox
+    article:
+        label: 'Article'
+        type: dropdown
+        span: auto
+        dependsOn: related
+        trigger:
+            action: show
+            field: related
+            condition: checked
