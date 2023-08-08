@@ -31,6 +31,7 @@ class Flyers extends Model
 	public $attachOne = [
 		'flyer_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
+        'file_print' => 'System\Models\File',
 	];
 
     // Add  below relationship with Revision model
