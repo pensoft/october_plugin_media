@@ -19,6 +19,20 @@ class Plugin extends PluginBase
                 return Diff::toHTML(Diff::compare($model->old_value, $model->new_value));
             });
         });
+
+        if(class_exists('\RainLab\Location\Controllers\Locations')){
+            \RainLab\Location\Controllers\Locations::extendFormFields(function($form, $model){
+                if (!$model instanceof \Rainlab\Location\Models\Country) {
+                    return;
+                }
+                $form->addFields([
+                    'country_language' => [
+                        'label' => 'Country language',
+                        'type' => 'text',
+                    ]
+                ]);
+            });
+        }
     }
 
     public function registerComponents()
