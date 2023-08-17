@@ -1,5 +1,6 @@
 <?php namespace Pensoft\Media;
 
+use Pensoft\Media\Components\FIlterVideos;
 use SaurabhDhariwal\Revisionhistory\Classes\Diff as Diff;
 use System\Classes\PluginBase;
 use System\Models\Revision as Revision;
@@ -18,6 +19,13 @@ class Plugin extends PluginBase
                 return Diff::toHTML(Diff::compare($model->old_value, $model->new_value));
             });
         });
+    }
+
+    public function registerComponents()
+    {
+        return [
+            FIlterVideos::class => 'filter_videos',
+        ];
     }
 
 }
