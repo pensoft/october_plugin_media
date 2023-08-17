@@ -35,6 +35,11 @@ class Videos extends Model
 
 	public $belongsTo = [
 		'parent' => 'Pensoft\Media\Models\Videos',
+        'country' => [
+            'RainLab\Location\Models\Country',
+            'scope' => 'isEnabled',
+            'order' => 'id'
+        ],
 	];
 
 	public $attachOne = [

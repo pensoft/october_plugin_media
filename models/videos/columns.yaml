@@ -23,3 +23,9 @@ columns:
         searchable: false
         sortable: false
         valueFrom: id
+    country:
+        label: Country
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/pensoft/media/partials/_country.htm

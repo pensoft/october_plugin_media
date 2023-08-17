@@ -37,3 +37,9 @@ fields:
         showSearch: true
         span: auto
         type: dropdown
+    country:
+        label: Country
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
