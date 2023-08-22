@@ -9,6 +9,11 @@ use RainLab\Location\Models\Country;
  */
 class FIlterVideos extends ComponentBase
 {
+    /**
+     * Provides details for the component, such as its name and description.
+     *
+     * @return array An associative array with the name and description of the component.
+     */
     public function componentDetails()
     {
         return [
@@ -17,11 +22,20 @@ class FIlterVideos extends ComponentBase
         ];
     }
 
+    /**
+     * Defines properties for the component.
+     *
+     * @return array An empty array, as this component does not have properties defined.
+     */
     public function defineProperties()
     {
         return [];
     }
 
+    /**
+     * Executes when the component is run. Adds JS, retrieves video data and country information, 
+     * and sets them to the page context.
+     */
     public function onRun()
     {
         $this->addJs('/plugins/pensoft/media/assets/def.js');
@@ -49,7 +63,11 @@ class FIlterVideos extends ComponentBase
         $this->page['countries'] = $formattedCountries;
     }
 
-
+    /**
+     * Handles the 'Filter Videos' AJAX request, returning updated video partial data.
+     *
+     * @return array An associative array with a key pointing to the HTML content for the videos.
+     */
     public function onFilterVideos()
     {
         $videos = $this->filterVideos()->get();
@@ -59,7 +77,12 @@ class FIlterVideos extends ComponentBase
             '#partialVideos' => $this->renderPartial('@videos', ['videos' => $videos])
         ];
     }
-
+    
+    /**
+     * Filters videos based on the country language provided.
+     *
+     * @return mixed A query builder instance for the Videos model filtered by country language.
+     */
     protected function filterVideos()
     {
         $countryId = post('filter_videos');
@@ -79,8 +102,13 @@ class FIlterVideos extends ComponentBase
             return Videos::whereIn('country_id', $countryIdsWithSameLanguage);
         }
 
-        // Default to English
+        // Default to English, if doesn't exist - Default to all
         $englishSpeakingCountries = Country::where('country_language', 'English')->pluck('id')->toArray();
-        return Videos::whereIn('country_id', $englishSpeakingCountries);
+        if(empty($englishSpeakingCountries)) {
+            return Videos::all();
+        } else {
+            return Videos::whereIn('country_id', $englishSpeakingCountries);
+        }
+        
     }
 }

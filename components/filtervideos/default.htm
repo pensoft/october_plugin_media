@@ -1,6 +1,5 @@
 {{ form_ajax(__SELF__ ~ '::onFilterVideos', { update: {'@videos': '#partialVideos'} }) }}
 <div class="row country-form">
-    {{ countryDetails.code }}
     <div class="col-xs">
         <div class="field">
             <select name="filter_videos" data-request="{{ __SELF__ ~ '::onFilterVideos'}}">
@@ -15,27 +14,95 @@
 </div>
 {{ form_close() }}
 
-<div class="row filter_videos" id="partialVideos">
-    {% for record in videos %}
-    <div class="col-md-6 col-xs-12">
-        <div class="card-container" style="max-width: 90%; height: 506px; margin-bottom: 20px;">
-            <p class="font-weight-bold">{{record.name}}</p>
-            {% if record.file %}
-            <video controls="" width="100%"><source src="{{record.file.path}}" type="video/mp4"></video>
-            <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>
-            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
-            {% endif %}
+{% set left_videos = [] %}
+{% set right_videos = [] %}
+{% set counter = 0 %}
+{% for record in videos %}
+    {% if counter is even %}
+        {% set left_videos = left_videos|merge([record]) %}
+    {% else %}
+        {% set right_videos = right_videos|merge([record]) %}
+    {% endif %}
+    {% set counter = counter + 1 %}
+{% endfor %}
+<div class="filter_videos work_packages" id="partialVideos">
+    <div class="row">
+        <div class="col-md-6 left-container">
+            {% for record in left_videos %}
+                <div class="accordion-border">
+                    <div class="row accordion-toggle">
+                        <div class="video-image"></div>
+                        <div class="col-xs start-xs">
+                            <div class="video-header">
+                                <p class="font-weight-bold">{{record.name}}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 end-xs plusminus">
+                            <span class="plus"></span>
+                        </div>
+                    </div>
+                    <div class="accordion-content" style="display: none;">
+                        <div class="video-content">
+                            {% if record.file %}
+                            <video controls="" width="100%" height="320">
+                                <source src="{{record.file.path}}#t=1" type="video/mp4">
+                            </video>
+<!--                            <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>-->
+                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
+                            {% endif %}
 
-            {% if record.youtube_url %}
-            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
-            <p>&nbsp;</p>
-            {% endif %}
+                            {% if record.youtube_url %}
+                            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
+                            <p>&nbsp;</p>
+                            {% endif %}
 
-            {% if record.vimeo_url %}
-            <iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
-            <p>&nbsp;</p>
-            {% endif %}
+                            {% if record.vimeo_url %}
+                            <iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
+                            <p>&nbsp;</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-6 right-container">
+            {% for record in right_videos %}
+                <div class="accordion-border">
+                    <div class="row accordion-toggle">
+                        <div class="video-image"></div>
+                        <div class="col-xs start-xs">
+                            <div class="video-header">
+                                <p class="font-weight-bold video-title">{{record.name}}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 end-xs plusminus">
+                            <span class="plus"></span>
+                        </div>
+                    </div>
+                    <div class="accordion-content" style="display: none;">
+                        <div class="video-content">
+                            {% if record.file %}
+                            <video controls="" width="100%">
+                                <source src="{{record.file.path}}#t=0.8" type="video/mp4">
+                            </video>
+                            <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>
+                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
+                            {% endif %}
+
+                            {% if record.youtube_url %}
+                            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
+                            <p>&nbsp;</p>
+                            {% endif %}
+
+                            {% if record.vimeo_url %}
+                            <iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
+                            <p>&nbsp;</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 </div>
