@@ -29,7 +29,7 @@
                         <div class="video-content">
                             {% if record.file %}
                             <video controls="" width="100%">
-                                <source src="{{record.file.path}}#t=1" type="video/mp4">
+                                <source src="{{record.file.path}}#t=0.9" type="video/mp4">
                             </video>
 <!--                            <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>-->
                             <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
@@ -68,7 +68,7 @@
                         <div class="video-content">
                             {% if record.file %}
                             <video controls="" width="100%">
-                                <source src="{{record.file.path}}#t=0" type="video/mp4">
+                                <source src="{{record.file.path}}#t=0.9" type="video/mp4">
                             </video>
                             <!-- <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p> -->
                             <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
