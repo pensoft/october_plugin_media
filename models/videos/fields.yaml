@@ -29,3 +29,17 @@ fields:
         mode: datetime
         span: auto
         type: datepicker
+    type:
+        label: Type
+        options:
+            1: 'Project video'
+            2: 'Relevant video'
+        showSearch: true
+        span: auto
+        type: dropdown
+    country:
+        label: Country
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

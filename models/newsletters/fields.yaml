@@ -31,3 +31,8 @@ fields:
       extension: auto
     required: 1
     type: fileupload
+  url:
+    label: 'URL'
+    span: right
+    required: 0
+    type: text

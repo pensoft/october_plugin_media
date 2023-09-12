@@ -3,13 +3,13 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableUpdatePensoftMediaVideos extends Migration
+class BuilderTableUpdatePensoftMediaVideos2 extends Migration
 {
     public function up()
     {
         Schema::table('pensoft_media_videos', function($table)
         {
-            $table->timestamp('published_at')->default('now()');
+            $table->integer('type')->default(1);
         });
     }
     
@@ -17,7 +17,7 @@ class BuilderTableUpdatePensoftMediaVideos extends Migration
     {
         Schema::table('pensoft_media_videos', function($table)
         {
-            $table->dropColumn('published_at');
+            $table->dropColumn('type');
         });
     }
 }
