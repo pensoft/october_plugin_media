@@ -4,7 +4,7 @@ namespace Pensoft\Media\Models;
 
 use Model;
 use BackendAuth;
-
+use Validator;
 /**
  * Model
  */
@@ -30,6 +30,15 @@ class Galleries extends Model
      * @var array Validation rules
      */
     public $rules = [
+    ];
+
+    /**
+     * @var array Translatable fields
+     */
+    public $translatable = [
+        'name',
+        'article',
+        'related'
     ];
 
     // Multiple images can be attached to a gallery.
@@ -94,5 +103,38 @@ class Galleries extends Model
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
+    }
+
+        /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
     }
 }
