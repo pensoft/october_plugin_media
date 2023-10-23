@@ -9,12 +9,14 @@ use Validator;
 class Flyers extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+
     use \October\Rain\Database\Traits\Revisionable;
 
     public $timestamps = false;
 
     // Add  for revisions limit
     public $revisionableLimit = 200;
+
 
     // Add for revisions on particular field
     protected $revisionable = ["id","name"];
@@ -43,11 +45,12 @@ class Flyers extends Model
     protected $jsonable = [
         'file_language_versions'
     ];
-    
+
 	public $attachOne = [
 		'flyer_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
-        'file_print' => 'System\Models\File',
+		'file_version' => 'System\Models\File',
+		'file_print' => 'System\Models\File',
 	];
 
     // Add  below relationship with Revision model
