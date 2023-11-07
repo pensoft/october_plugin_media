@@ -1,0 +1,80 @@
+{% if gallery %}
+<div class="row justify-content-center gallery-item">
+    <div class="col-xs-12 text-center gallery-title">
+        <h1>{{gallery.name}}</h1>
+    </div>
+    <div class="col-xs-12 text-center pb-5">
+        {{ form_open({request: __SELF__ ~ '::onDownload'}) }}
+        <button type="submit" href="#" class="btn btn-primary">{{'Download all images' |_}}</button>
+        {{ form_close() }}
+    </div>
+    <div class="col-xs-12 col-md-10">
+        <div class="news_content_wrapper">
+            <div class="gallery_container">
+                {% for key1, value1 in gallery.images %}
+                <div class="mySlides">
+                    <img class="img-fluid" src="{{ value1.thumb(auto, 600, {'mode':'crop'})}}" alt="{{ value1.title|default('') }}">
+                </div>
+
+                {% endfor %}
+
+                <a class="prev" onclick="plusSlides(-1)"></a>
+                <a class="next" onclick="plusSlides(1)"></a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <div class="row">
+                    {% for key2, value2 in gallery.images %}
+                    <div class="col-md-2 col-xs-6 pb-2 column">
+                        <img class="demo cursor" src="{{ value2.thumb(155, 103, {'mode':'crop'})}}" style="width:100%" onclick="currentSlide(({{key2}} + 1))" alt="{{ value2.title|default('') }}">
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = $(".mySlides");
+                    console.log(slides)
+                    let dots = document.getElementsByClassName("demo");
+                    let captionText = document.getElementById("caption");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                    captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+            </script>
+
+        </div>
+    </div>
+
+</div>
+
+{% else %}
+
+<h1>Gallery doesn't exist</h1>
+
+{% endif %}
