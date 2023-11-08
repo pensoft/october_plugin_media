@@ -1,7 +1,7 @@
 fields:
     name:
         label: Title
-        span: auto
+        span: full
         type: text
     images:
         label: Images
@@ -12,18 +12,33 @@ fields:
         thumbOptions:
             mode: crop
             extension: auto
-        span: auto
+        span: full
         type: fileupload
     related:
         label: 'Related to article'
         type: checkbox
+        comment: 'Relate this gallery to an Article'
+        span: left
     article:
         label: 'Article'
         type: dropdown
-        span: auto
+        span: left
         dependsOn: related
         trigger:
             action: show
             field: related
+            condition: checked    
+    event_related:
+        label: 'Related to an event'
+        type: checkbox
+        comment: 'Relate this gallery to an Event'
+        span: right
+    event:
+        label: 'Event'
+        type: dropdown
+        span: right
+        dependsOn: event_related
+        trigger:
+            action: show
+            field: event_related
             condition: checked
-            

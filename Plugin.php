@@ -39,6 +39,8 @@ class Plugin extends PluginBase
     {
         return [
             FIlterVideos::class => 'filter_videos',
+            'Pensoft\Media\Components\Galleries' => 'galleries',
+            'Pensoft\Media\Components\GalleriesList' => 'galleries_list',
         ];
     }
 

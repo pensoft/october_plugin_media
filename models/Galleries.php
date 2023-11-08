@@ -4,6 +4,7 @@ namespace Pensoft\Media\Models;
 
 use Model;
 use BackendAuth;
+use Validator;
 
 /**
  * Model
@@ -19,7 +20,7 @@ class Galleries extends Model
     public $revisionableLimit = 200;
 
     // Add for revisions on particular field
-    protected $revisionable = ["id","name", "related", "article_id"];
+    protected $revisionable = ["id", "name", "related", "article_id", "event_related", "event_id"];
 
     /**
      * @var string The database table used by the model.
@@ -32,6 +33,17 @@ class Galleries extends Model
     public $rules = [
     ];
 
+    /**
+     * @var array Translatable fields
+     */
+    public $translatable = [
+        'name',
+        'article',
+        'related',
+        'event_related',
+        'event_id'
+    ];
+
     // Multiple images can be attached to a gallery.
     public $attachMany = [
         'images' => 'System\Models\File',
@@ -40,7 +52,7 @@ class Galleries extends Model
     // Optional relationship with the Article model.
     public $belongsTo = [];
 
-    public $fillable = ['name', 'related', 'article_id'];
+    public $fillable = ['name', 'related', 'article_id', 'event_related', 'event_id'];
 
     // Add  below relationship with Revision model
     public $morphMany = [
@@ -51,6 +63,7 @@ class Galleries extends Model
     public $attributes = [
         'name' => 'Gallery Name',
         'related' => false,
+        'event_related' => false,
     ];
 
     public function __construct(array $attributes = [])
@@ -61,16 +74,25 @@ class Galleries extends Model
         if (class_exists('Pensoft\Articles\Models\Article')) {
             $this->belongsTo['article'] = ['Pensoft\Articles\Models\Article', 'key' => 'article_id'];
         }
+
+        // Check if Entry model exists
+        if (class_exists('Pensoft\Calendar\Models\Entry')) {
+            $this->belongsTo['event'] = ['Pensoft\Calendar\Models\Entry', 'key' => 'event_id'];
+        }
     }
 
     /**
      * Actions to perform before saving a gallery.
-     * If the gallery isn't related to an article, unset the article_id.
+     * If the gallery isn't related to an article / event, unset the article_id / event_id.
      */
     public function beforeSave()
     {
         if (!$this->related) {
             $this->article_id = null;
+        }
+
+        if (!$this->event_related) {
+            $this->event_id = null;
         }
     }
 
@@ -91,8 +113,53 @@ class Galleries extends Model
         }
     }
 
+    /**
+     * Provides a list of event options.
+     * This is used when selecting an event to associate with the gallery.
+     */
+    public function getEventOptions()
+    {
+        // Check if the Event model exists.
+        if (class_exists(\Pensoft\Calendar\Models\Entry::class)) {
+            return $events = \Pensoft\Calendar\Models\Entry::all()->pluck('title', 'id')->toArray();
+        }
+    }
+
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
+    }
+
+        /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
     }
 }
