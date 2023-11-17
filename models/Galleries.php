@@ -59,42 +59,22 @@ class Galleries extends Model
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
-    // default values for new instances
-    public $attributes = [
-        'name' => 'Gallery Name',
-        'related' => false,
-        'event_related' => false,
+    public $belongsToMany = [
+        'articles' => [
+            'Pensoft\Articles\Models\Article',
+            'table' => 'pensoft_gallery_article_pivot',
+            'key' => 'gallery_id',
+            'otherKey' => 'article_id',
+            'order' => 'created_at desc'
+        ],
+        'events' => [
+            'Pensoft\Calendar\Models\Entry',
+            'table' => 'pensoft_gallery_entry_pivot',
+            'key' => 'gallery_id',
+            'otherKey' => 'entry_id',
+            'order' => 'created_at desc'
+        ],
     ];
-
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-
-        // Check if the Article model exists
-        if (class_exists('Pensoft\Articles\Models\Article')) {
-            $this->belongsTo['article'] = ['Pensoft\Articles\Models\Article', 'key' => 'article_id'];
-        }
-
-        // Check if Entry model exists
-        if (class_exists('Pensoft\Calendar\Models\Entry')) {
-            $this->belongsTo['event'] = ['Pensoft\Calendar\Models\Entry', 'key' => 'event_id'];
-        }
-    }
-
-    /**
-     * Actions to perform before saving a gallery.
-     * If the gallery isn't related to an article / event, unset the article_id / event_id.
-     */
-    public function beforeSave()
-    {
-        if (!$this->related) {
-            $this->article_id = null;
-        }
-
-        if (!$this->event_related) {
-            $this->event_id = null;
-        }
-    }
 
     // Add below function use for get current user details
     public function diff(){

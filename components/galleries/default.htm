@@ -13,7 +13,9 @@
             <div class="gallery_container">
                 {% for key1, value1 in gallery.images %}
                 <div class="mySlides">
+                    <div class="image-title text-center"><p>{{ value1.title }}</p></div>
                     <img class="img-fluid" src="{{ value1.thumb(auto, 600, {'mode':'crop'})}}" alt="{{ value1.title|default('') }}">
+                    <div class="image-caption text-center"><p>{{ value1.description }}</p></div>
                 </div>
 
                 {% endfor %}
@@ -35,44 +37,9 @@
 
                 </div>
             </div>
-
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    let i;
-                    let slides = $(".mySlides");
-                    console.log(slides)
-                    let dots = document.getElementsByClassName("demo");
-                    let captionText = document.getElementById("caption");
-                    if (n > slides.length) {slideIndex = 1}
-                    if (n < 1) {slideIndex = slides.length}
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    slides[slideIndex-1].style.display = "block";
-                    dots[slideIndex-1].className += " active";
-                    captionText.innerHTML = dots[slideIndex-1].alt;
-                }
-            </script>
-
         </div>
     </div>
-
 </div>
-
 {% else %}
 
 <h1>Gallery doesn't exist</h1>
