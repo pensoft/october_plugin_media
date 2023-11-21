@@ -198,4 +198,9 @@ class Galleries extends ComponentBase
         return GalleriesModel::find($galleryId);
     }
 
+    function loadGalleryRecord($id)
+    {
+        return GalleriesModel::find($id);
+    }
+
 }
