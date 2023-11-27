@@ -34,3 +34,11 @@ fields:
         descriptionFrom: description
         pivotData:
             table: pensoft_gallery_event_pivot
+    show_on_homepage:
+        label: 'Homepage'
+        type: 'switch'
+        comment: Toggle to attach this gallery to the Homepage
+    show_on_ecological:
+        label: 'What is ecological restoration?'
+        type: 'switch'
+        comment: Toggle to attach this gallery to the 'What is ecological restoration' page
