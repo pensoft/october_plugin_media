@@ -53,3 +53,55 @@
 1.1.12:
     - 'Updated table pensoft_media_videos'
     - builder_table_update_pensoft_media_videos.php
+1.1.13:
+    - 'Revision history'
+1.1.14:
+    - 'Revision history with fixes'
+1.1.15:
+    - 'Revision history with fixes in plugin.php'
+1.1.16:
+    - 'Updated table pensoft_media_newsletters'
+    - builder_table_update_pensoft_media_newsletters.php
+1.1.17:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_2.php
+1.1.18:
+    - 'Created table builder_table_create_pensoft_media_galleries'
+    - builder_table_create_pensoft_media_galleries.php
+1.1.19:
+    - 'Created new section galleries'
+1.1.20:
+    - 'New field in flyer module'
+1.1.21:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_3.php
+1.1.22:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_4.php
+1.1.23:
+    - 'Updated table rainlab_location_countries'
+    - update_countries_language.php
+1.1.24:
+    - 'Register component fix'
+1.1.25:
+    - 'Register component fix'
+1.1.26:
+    - 'Filter videos component dropdowns'
+1.1.27:
+    - 'Filter videos component dropdowns'
+1.1.28:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers.php
+1.1.29:
+    - Translate
+1.1.30:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries.php
+1.1.31:
+    - 'Galleries logic refactoring'
+1.1.32:
+    - 'Galleries logic refactoring NEW'
+1.1.33:
+    - 'Galleries new method'
+1.1.34:
+    - 'Updated flyers file lang versions'
