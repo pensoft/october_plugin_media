@@ -1,8 +1,8 @@
 <?php namespace Pensoft\Media\Models;
 
 use Model;
+use BackendAuth;
 use Validator;
-
 /**
  * Model
  */
@@ -10,7 +10,16 @@ class Flyers extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
+    use \October\Rain\Database\Traits\Revisionable;
 
+    public $timestamps = false;
+
+    // Add  for revisions limit
+    public $revisionableLimit = 200;
+
+
+    // Add for revisions on particular field
+    protected $revisionable = ["id","name"];
     /**
      * @var string The database table used by the model.
      */
@@ -30,16 +39,27 @@ class Flyers extends Model
         'file_language_versions'
     ];
 
+    /**
+     * @var array Attributes to be cast to JSON
+     */
+    protected $jsonable = [
+        'file_language_versions'
+    ];
+
 
 	public $attachOne = [
 		'flyer_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
+		'file_version' => 'System\Models\File',
+		'file_print' => 'System\Models\File',
 	];
+
 
     // Multiple images can be attached to a gallery.
     public $attachMany = [
         'file_lang_versions' => 'System\Models\File',
     ];
+
 
     // Add  below relationship with Revision model
     public $morphMany = [

@@ -18,4 +18,10 @@ columns:
       searchable: true
       sortable: true
       path: $/pensoft/media/models/medialogos/_file.htm
+    revisions:
+        type: partial
+        path: ~/plugins/pensoft/media/partials/_revision.htm
+        searchable: false
+        sortable: false
+        valueFrom: id
 
