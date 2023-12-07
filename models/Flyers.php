@@ -46,12 +46,20 @@ class Flyers extends Model
         'file_language_versions'
     ];
 
+
 	public $attachOne = [
 		'flyer_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
 		'file_version' => 'System\Models\File',
 		'file_print' => 'System\Models\File',
 	];
+
+
+    // Multiple images can be attached to a gallery.
+    public $attachMany = [
+        'file_lang_versions' => 'System\Models\File',
+    ];
+
 
     // Add  below relationship with Revision model
     public $morphMany = [
@@ -62,6 +70,7 @@ class Flyers extends Model
     public function diff(){
         $history = $this->revision_history;
     }
+
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
