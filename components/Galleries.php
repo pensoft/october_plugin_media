@@ -98,7 +98,7 @@ class Galleries extends ComponentBase
     protected function getTemporaryZipFileName()
     {
         $record = $this->loadRecord();
-        $galleryName = $this->sanitizeFileName($record->name);
+        $galleryName = $this->sanitizeFileName('gallery_' . $record->id);
         return sys_get_temp_dir() . DIRECTORY_SEPARATOR . $galleryName . '.zip';
     }
 
