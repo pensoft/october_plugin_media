@@ -34,6 +34,7 @@ fields:
         options:
             1: 'Project video'
             2: 'Relevant video'
+            3: 'Other video'
         showSearch: true
         span: auto
         type: dropdown
