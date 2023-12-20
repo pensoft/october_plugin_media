@@ -1,27 +1,64 @@
 fields:
-  name:
-    label: 'Name'
-    span: left
-    required: 1
-    type: text
-  flyer_image:
-    label: 'Flyer image'
-    mode: image
-    imageWidth: '200'
-    useCaption: true
-    fileTypes: svg,png,jpg
-    thumbOptions:
-      mode: crop
-      extension: auto
-    span: right
-    type: fileupload
-  file:
-    label: 'File'
-    span: left
-    mode: file
-    useCaption: true
-    thumbOptions:
-      mode: crop
-      extension: auto
-    required: 1
-    type: fileupload
+    name:
+        label: Name
+        span: left
+        required: 1
+        type: text
+    flyer_image:
+        label: 'Flyer image'
+        mode: image
+        imageWidth: '200'
+        useCaption: true
+        fileTypes: 'svg,png,jpg'
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    file:
+        label: File
+        span: left
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        required: 1
+        type: fileupload
+    file_print:
+        label: 'File (Print)'
+        span: left
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        required: 0
+        type: fileupload
+    file_lang_versions:
+        label: 'File language versoins'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+#    file_language_versions:
+#        label: 'File language versions'
+#        prompt: 'Add new item'
+#        style: default
+#        span: auto
+#        type: repeater
+#        form:
+#            fields:
+#                file_version_label:
+#                    label: Label
+#                    span: auto
+#                    type: text
+#                file_version:
+#                    label: 'File version'
+#                    mode: file
+#                    span: auto
+#                    type: mediafinder
+#                    comment: 'Please choose from uploaded media'

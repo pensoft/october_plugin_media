@@ -1,0 +1,10 @@
+name: Galleries
+form: $/pensoft/media/models/galleries/fields.yaml
+modelClass: Pensoft\Media\Models\Galleries
+defaultRedirect: pensoft/media/galleries
+create:
+    redirect: 'pensoft/media/galleries/update/:id'
+    redirectClose: pensoft/media/galleries
+update:
+    redirect: pensoft/media/galleries
+    redirectClose: pensoft/media/galleries
