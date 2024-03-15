@@ -92,3 +92,37 @@
 1.1.28:
     - 'Updated table pensoft_media_flyers'
     - builder_table_update_pensoft_media_flyers.php
+1.1.29:
+    - Translate
+1.1.30:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries.php
+1.1.31:
+    - 'Galleries logic refactoring'
+1.1.32:
+    - 'Galleries logic refactoring NEW'
+1.1.33:
+    - 'Galleries new method'
+1.1.34:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_2.php
+1.1.35:
+    - 'Updated flyers file lang versions'
+1.1.36:
+    - 'Galleries download name fix'
+1.1.37:
+    - 'Videos new type'
+1.1.38:
+    - 'Updated table pensoft_media_pressreleases'
+    - builder_table_update_pensoft_media_pressreleases.php
+1.1.39:
+    - 'Updated table pensoft_media_flyers 3'
+    - builder_table_update_pensoft_media_flyers_3.php
+1.1.40:
+    - 'Created categories'
+1.1.41:
+    - 'Created categories table'
+    - create_categories_table.php
+1.1.42:
+    - 'Update tb pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_4.php

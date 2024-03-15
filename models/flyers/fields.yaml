@@ -53,3 +53,8 @@ fields:
                     span: auto
                     type: mediafinder
                     comment: 'Please choose from uploaded media'
+    category:
+        label: 'Category'
+        type: 'dropdown'
+        placeholder: 'Select Category'
+        span: auto

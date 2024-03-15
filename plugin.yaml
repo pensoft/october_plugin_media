@@ -18,6 +18,10 @@ navigation:
                 label: Flyers
                 url: pensoft/media/flyers
                 icon: oc-icon-image
+            side-menu-media-categories:
+                label: 'Flyers Categories'
+                url: pensoft/media/categories
+                icon: icon-list
             side-menu-media-newsletter:
                 label: Newsletter
                 url: pensoft/media/newsletter

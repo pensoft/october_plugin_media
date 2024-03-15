@@ -44,6 +44,17 @@ class Flyers extends Model
 		'file_print' => 'System\Models\File',
 	];
 
+
+    // Multiple images can be attached to a gallery.
+    public $attachMany = [
+        'file_lang_versions' => 'System\Models\File',
+    ];
+
+    public $belongsTo = [
+        'category' => ['Pensoft\Media\Models\Category', 'key' => 'category_id']
+    ];
+
+
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
@@ -57,4 +68,43 @@ class Flyers extends Model
     {
         return BackendAuth::getUser()->id;
     }
+
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\Category::pluck('name', 'id')->toArray();
+    }
+
+    /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
+    }
+
 }
