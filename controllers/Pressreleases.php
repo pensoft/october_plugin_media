@@ -6,7 +6,7 @@ use BackendMenu;
 class Pressreleases extends Controller
 {
     public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
-    
+
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
@@ -15,5 +15,7 @@ class Pressreleases extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-media-pressreleases');
+
+        (new \Pensoft\Media\Models\Pressreleases())->resetTreeNesting();
     }
 }

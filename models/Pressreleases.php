@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use Validator;
 /**
  * Model
  */
@@ -9,6 +10,8 @@ class Pressreleases extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\NestedTree;
+
 
     public $timestamps = false;
 
@@ -17,6 +20,7 @@ class Pressreleases extends Model
 
     // Add for revisions on particular field
     protected $revisionable = ["id","name","youtube_url","vimeo_url"];
+
 
     /**
      * @var string The database table used by the model.
@@ -27,6 +31,15 @@ class Pressreleases extends Model
      * @var array Validation rules
      */
     public $rules = [
+    ];
+
+    /**
+     * @var array Translatable fields
+     */
+    public $translatable = [
+        'name',
+        'description',
+        'link',
     ];
 
 	protected $jsonable = [
@@ -44,5 +57,38 @@ class Pressreleases extends Model
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
+    }
+
+        /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
     }
 }

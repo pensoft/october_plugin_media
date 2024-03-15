@@ -1,7 +1,7 @@
 fields:
     name:
         label: Title
-        span: auto
+        span: full
         type: text
     images:
         label: Images
@@ -12,18 +12,33 @@ fields:
         thumbOptions:
             mode: crop
             extension: auto
-        span: auto
+        span: full
         type: fileupload
-    related:
-        label: 'Related to article'
-        type: checkbox
-    article:
-        label: 'Article'
-        type: dropdown
-        span: auto
-        dependsOn: related
-        trigger:
-            action: show
-            field: related
-            condition: checked
-            
+    articles:
+        label: Articles
+        comment: Attach this gallery to an article
+        type: relation
+        span: full
+        select: title
+        nameFrom: title
+        descriptionFrom: description
+        pivotData:
+            table: pensoft_gallery_article_pivot
+    events:
+        label: 'Events'
+        comment: Attach this gallery to an event
+        type: relation
+        span: full
+        select: title
+        nameFrom: title
+        descriptionFrom: description
+        pivotData:
+            table: pensoft_gallery_event_pivot
+    show_on_homepage:
+        label: 'Homepage'
+        type: 'switch'
+        comment: Toggle to attach this gallery to the Homepage
+    show_on_ecological:
+        label: 'What is ecological restoration?'
+        type: 'switch'
+        comment: Toggle to attach this gallery to the 'What is ecological restoration' page

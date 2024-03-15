@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use Validator;
 /**
  * Model
  */
@@ -31,11 +32,20 @@ class Flyers extends Model
     ];
 
     /**
+     * @var array Translatable fields
+     */
+    public $translatable = [
+        'name',
+        'file_language_versions'
+    ];
+
+    /**
      * @var array Attributes to be cast to JSON
      */
     protected $jsonable = [
         'file_language_versions'
     ];
+
 
 	public $attachOne = [
 		'flyer_image' => 'System\Models\File',
@@ -64,6 +74,7 @@ class Flyers extends Model
     public function diff(){
         $history = $this->revision_history;
     }
+
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
@@ -106,5 +117,4 @@ class Flyers extends Model
             }
         );
     }
-
 }
