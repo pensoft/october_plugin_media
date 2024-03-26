@@ -43,19 +43,7 @@ fields:
             mode: crop
             extension: auto
         span: auto
-        type: repeater
-        form:
-            fields:
-                file_version_label:
-                    label: Label
-                    span: auto
-                    type: text
-                file_version:
-                    label: 'File version'
-                    mode: file
-                    span: auto
-                    type: mediafinder
-                    comment: 'Please choose from uploaded media'
+        type: fileupload
     category:
         label: 'Category'
         type: 'dropdown'

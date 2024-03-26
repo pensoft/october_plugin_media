@@ -126,3 +126,8 @@
 1.1.42:
     - 'Update tb pensoft_media_flyers'
     - builder_table_update_pensoft_media_flyers_4.php
+1.1.43:
+    - 'Update tb pensoft_media_flyers'
+    - builder_table_update_pensoft_media_newsletters_2.php
+1.1.44:
+    - 'fix language field'
