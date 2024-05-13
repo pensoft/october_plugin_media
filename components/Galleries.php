@@ -6,7 +6,7 @@ use Pensoft\Media\Models\Galleries as GalleriesModel;
 /**
  * Galleries Component
  *
- * This component handles gallery operations such as displaying gallery details 
+ * This component handles gallery operations such as displaying gallery details
  * and providing a download functionality for gallery images as a zip archive.
  */
 class Galleries extends ComponentBase
@@ -54,6 +54,8 @@ class Galleries extends ComponentBase
     {
         $this->record = $this->loadRecord();
         $this->page['gallery'] = $this->record;
+        $this->page[$this->alias . 'Gallery'] = $this->record;
+
     }
 
     /**
@@ -96,10 +98,10 @@ class Galleries extends ComponentBase
     protected function getTemporaryZipFileName()
     {
         $record = $this->loadRecord();
-        $galleryName = $this->sanitizeFileName($record->name);
+        $galleryName = $this->sanitizeFileName('gallery_' . $record->id);
         return sys_get_temp_dir() . DIRECTORY_SEPARATOR . $galleryName . '.zip';
     }
-    
+
     /**
      * Initialize a new or existing zip archive.
      *
@@ -173,7 +175,7 @@ class Galleries extends ComponentBase
 
         return $images;
     }
-    
+
     /**
      * Sanitize the provided filename.
      *
@@ -192,6 +194,13 @@ class Galleries extends ComponentBase
      */
     protected function loadRecord()
     {
-        return GalleriesModel::where('id', $this->property('id'))->first();
+        $galleryId = $this->property('id');
+        return GalleriesModel::find($galleryId);
     }
+
+    function loadGalleryRecord($id)
+    {
+        return GalleriesModel::find($id);
+    }
+
 }

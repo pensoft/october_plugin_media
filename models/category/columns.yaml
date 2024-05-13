@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name: 
+        label: Name
+        type: text
+        searchable: true
+    revisions:
+        type: partial
+        path: ~/plugins/pensoft/media/partials/_revision.htm
+        searchable: false
+        sortable: false
+        valueFrom: id

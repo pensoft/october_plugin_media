@@ -35,21 +35,17 @@ fields:
             extension: auto
         required: 0
         type: fileupload
-    file_language_versions:
-        label: 'File language versions'
-        prompt: 'Add new item'
-        style: default
+    file_lang_versions:
+        label: 'File language versoins'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
         span: auto
-        type: repeater
-        form:
-            fields:
-                file_version_label:
-                    label: Label
-                    span: auto
-                    type: text
-                file_version:
-                    label: 'File version'
-                    mode: file
-                    span: auto
-                    type: mediafinder
-                    comment: 'Please choose from uploaded media'
+        type: fileupload
+    category:
+        label: 'Category'
+        type: 'dropdown'
+        placeholder: 'Select Category'
+        span: auto

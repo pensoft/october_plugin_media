@@ -10,6 +10,8 @@ class Pressreleases extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\NestedTree;
+
 
     public $timestamps = false;
 
@@ -18,6 +20,7 @@ class Pressreleases extends Model
 
     // Add for revisions on particular field
     protected $revisionable = ["id","name","youtube_url","vimeo_url"];
+
 
     /**
      * @var string The database table used by the model.

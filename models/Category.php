@@ -1,47 +1,41 @@
 <?php namespace Pensoft\Media\Models;
 
 use Model;
-use BackendAuth;
 use Validator;
+use October\Rain\Database\Traits\Sortable;
 
 /**
- * Model
+ * Category Model
  */
-class Newsletters extends Model
+class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
     use \October\Rain\Database\Traits\Revisionable;
+    use Sortable;
 
-    public $timestamps = false;
-
-    // Add  for revisions limit
-    public $revisionableLimit = 200;
+    /**
+     * @var string table associated with the model
+     */
+    public $table = 'pensoft_media_categories';
 
     // Add for revisions on particular field
     protected $revisionable = ["id","name"];
 
     /**
-     * 
+     * @var array guarded attributes aren't mass assignable
      */
-    protected $fillable = [
-        'name',
-        'date',
-        'newsletter_image',
-        'file',
-        'url',
-        // Other fields...
-    ];
+    protected $guarded = ['*'];
 
     /**
-     * @var string The database table used by the model.
+     * @var array fillable attributes are mass assignable
      */
-    public $table = 'pensoft_media_newsletters';
+    protected $fillable = [];
 
     /**
-     * @var array Validation rules
+     * @var array rules for validation
      */
     public $rules = [
+        'name' => 'required',
     ];
 
     /**
@@ -49,39 +43,52 @@ class Newsletters extends Model
      */
     public $translatable = [
         'name',
-        'file_language_versions',
+    ];
+    
+    /**
+     * @var array Attributes to be cast to native types
+     */
+    protected $casts = [];
+
+    /**
+     * @var array jsonable attribute names that are json encoded and decoded from the database
+     */
+    protected $jsonable = [];
+
+    /**
+     * @var array appends attributes to the API representation of the model (ex. toArray())
+     */
+    protected $appends = [];
+
+    /**
+     * @var array hidden attributes removed from the API representation of the model (ex. toArray())
+     */
+    protected $hidden = [];
+
+    /**
+     * @var array dates attributes that should be mutated to dates
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at'
     ];
 
     /**
-     * @var array Attributes to be cast to JSON
+     * @var array hasOne and other relations
      */
-    protected $jsonable = [
-        'file_language_versions'
+    public $hasOne = [];
+    public $hasMany = [
+        'flyers' => ['Pensoft\Media\Models\Flyers']
     ];
-    
-	public $attachOne = [
-		'newsletter_image' => 'System\Models\File',
-		'file' => 'System\Models\File',
-	];
-
-    public $attachMany = [
-        'file_lang_versions' => 'System\Models\File',
-    ];
-    
-    // Add  below relationship with Revision model
+    public $belongsTo = [];
+    public $belongsToMany = [];
+    public $morphTo = [];
+    public $morphOne = [];
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
-
-    // Add below function use for get current user details
-    public function diff(){
-        $history = $this->revision_history;
-    }
-    
-    public function getRevisionableUser()
-    {
-        return BackendAuth::getUser()->id;
-    }
+    public $attachOne = [];
+    public $attachMany = [];
 
         /**
      * Add translation support to this model, if available.
