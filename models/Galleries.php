@@ -5,6 +5,8 @@ namespace Pensoft\Media\Models;
 use Model;
 use BackendAuth;
 use Validator;
+use Cms\Classes\Theme;
+
 
 /**
  * Model
@@ -13,6 +15,7 @@ class Galleries extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\Sortable;
 
     public $timestamps = true;
 
@@ -44,6 +47,11 @@ class Galleries extends Model
         'event_id'
     ];
 
+    protected $casts = [
+        'show_on_homepage' => 'boolean',
+        'show_on_ecological' => 'boolean',
+    ];
+    
     // Multiple images can be attached to a gallery.
     public $attachMany = [
         'images' => 'System\Models\File',
