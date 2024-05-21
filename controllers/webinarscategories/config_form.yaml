@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Webinars Category
+
+# Model Form Field configuration
+form: $/pensoft/media/models/webinarscategory/fields.yaml
+
+# Model Class name
+modelClass: Pensoft\Media\Models\WebinarsCategory
+
+# Default redirect location
+defaultRedirect: pensoft/media/webinarscategories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: pensoft/media/webinarscategories/update/:id
+    redirectClose: pensoft/media/webinarscategories
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: pensoft/media/webinarscategories
+    redirectClose: pensoft/media/webinarscategories
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
