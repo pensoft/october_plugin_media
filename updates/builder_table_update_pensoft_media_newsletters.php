@@ -15,9 +15,11 @@ class BuilderTableUpdatePensoftMediaNewsletters extends Migration
 
     public function down()
     {
-        Schema::table('pensoft_media_newsletters', function($table)
-        {
-            $table->dropColumn('url');
-        });
+        if (Schema::hasColumn('pensoft_media_newsletters', 'url')){
+            Schema::table('pensoft_media_newsletters', function($table)
+            {
+                $table->dropColumn('url');
+            });
+        }
     }
 }
