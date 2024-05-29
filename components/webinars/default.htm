@@ -58,7 +58,7 @@
                 {% endif %}
 
                 {% if record.youtube_url %}
-                <iframe width="761" height="447" style="max-width: 100%; border-radius: 22px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{ record.youtube_url }}"></iframe>
+                <iframe width="761" height="447" style="max-width: 100%; border-radius: 22px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="{{ record.youtube_url }}"></iframe>
                 <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
                 {% endif %}
 

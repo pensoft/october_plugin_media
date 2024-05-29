@@ -159,3 +159,7 @@
 1.1.54:
     - 'Updated table pensoft_media_webinars_categories'
     - builder_table_update_pensoft_media_webinars_categories.php
+1.2.0:
+    - 'Fix migrations'
+1.2.1:
+    - 'Add webinars full screen'
