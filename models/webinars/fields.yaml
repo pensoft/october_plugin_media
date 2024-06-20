@@ -24,3 +24,8 @@ fields:
     span: left
     required: 0
     type: text
+  category:
+      label: 'Category'
+      type: 'dropdown'
+      placeholder: 'Select Category'
+      span: auto

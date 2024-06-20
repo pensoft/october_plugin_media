@@ -16,10 +16,12 @@ class BuilderTableUpdatePensoftMediaFlyers4 extends Migration
 
     public function down()
     {
-        Schema::table('pensoft_media_flyers', function($table)
-        {
-            $table->dropForeign(['category_id']);
-            $table->dropColumn('category_id');
-        });
+        if (Schema::hasTable('pensoft_media_flyers')) {
+            Schema::table('pensoft_media_flyers', function($table)
+            {
+                $table->dropForeign(['category_id']);
+                $table->dropColumn('category_id');
+            });
+        }
     }
 }

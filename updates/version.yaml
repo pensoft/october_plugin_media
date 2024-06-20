@@ -132,4 +132,36 @@
 1.1.44:
     - 'fix language field'
 1.1.45:
+    - 'Updated table pensoft_media_webinars'
+1.1.46:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_2.php
+1.1.47:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_3.php
+1.1.48:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_4.php
+1.1.49:
+    - 'Updated table pensoft_media_galleries'
+1.1.50:
+    - 'Updated table pensoft_media_galleries'
+    - update_pensoft_media_galleries.php
+1.1.51:
+    - Created table pensoft_media_webinars_categories
+    - create_webinars_categories_table.php
+1.1.52:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_3.php
+1.1.53:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_4.php
+1.1.54:
+    - 'Updated table pensoft_media_webinars_categories'
+    - builder_table_update_pensoft_media_webinars_categories.php
+1.2.0:
+    - 'Fix migrations'
+1.2.1:
+    - 'Add webinars full screen'
+1.2.2:
     - 'Presentations multi lang'

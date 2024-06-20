@@ -15,9 +15,9 @@ class BuilderTableUpdatePensoftMediaFlyers2 extends Migration
     
     public function down()
     {
-        Schema::table('pensoft_media_flyers', function($table)
-        {
-            $table->string('file_language_versions', 255)->nullable()->unsigned(false)->default(null)->comment(null)->change();
-        });
+        // Schema::table('pensoft_media_flyers', function($table)
+        // {
+        //     $table->string('file_language_versions', 255)->nullable()->unsigned(false)->default(null)->comment(null)->change();
+        // });
     }
 }
