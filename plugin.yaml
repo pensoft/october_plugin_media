@@ -18,6 +18,10 @@ navigation:
                 label: Flyers
                 url: pensoft/media/flyers
                 icon: oc-icon-image
+            side-menu-media-categories:
+                label: 'Flyers Categories'
+                url: pensoft/media/categories
+                icon: icon-list
             side-menu-media-newsletter:
                 label: Newsletter
                 url: pensoft/media/newsletter
@@ -38,6 +42,10 @@ navigation:
                 label: Webinars
                 url: pensoft/media/webinars
                 icon: oc-icon-headphones
+            side-menu-media-categories-webinars:
+                label: 'Webinars Categories'
+                url: pensoft/media/webinarscategories
+                icon: icon-list
             side-menu-item:
                 label: Graphics
                 url: pensoft/media/graphics

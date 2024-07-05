@@ -25,3 +25,12 @@ fields:
       extension: auto
     required: 1
     type: fileupload
+  file_lang_versions:
+    label: 'File language versoins'
+    mode: file
+    useCaption: true
+    thumbOptions:
+        mode: crop
+        extension: auto
+    span: auto
+    type: fileupload
