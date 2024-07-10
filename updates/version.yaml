@@ -167,3 +167,6 @@
     - 'Presentations multi lang'
 1.2.3:
     - 'Brand manual in Logos'
+1.2.4:
+    - 'Updated pensoft_media_documents'
+    - builder_table_create_pensoft_media_documents.php

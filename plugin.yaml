@@ -54,3 +54,7 @@ navigation:
                 label: 'Galleries'
                 url: pensoft/media/galleries
                 icon: oc-icon-camera
+            side-menu-media-documents:
+                label: 'Documents'
+                url: pensoft/media/documents
+                icon: icon-file
