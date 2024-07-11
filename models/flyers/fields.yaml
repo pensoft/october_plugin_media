@@ -57,7 +57,11 @@ fields:
                     type: mediafinder
                     comment: 'Please choose from uploaded media'
     category:
-        label: 'Category'
-        type: 'dropdown'
+        label: Category
+        type: dropdown
         placeholder: 'Select Category'
         span: auto
+    sort_order:
+        label: Order
+        span: auto
+        type: number
