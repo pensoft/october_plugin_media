@@ -49,12 +49,25 @@ class Newsletters extends Model
      */
     public $translatable = [
         'name',
+        'file_language_versions',
     ];
 
+    /**
+     * @var array Attributes to be cast to JSON
+     */
+    protected $jsonable = [
+        'file_language_versions'
+    ];
+    
 	public $attachOne = [
 		'newsletter_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
 	];
+
+    public $attachMany = [
+        'file_lang_versions' => 'System\Models\File',
+    ];
+    
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
@@ -64,6 +77,7 @@ class Newsletters extends Model
     public function diff(){
         $history = $this->revision_history;
     }
+    
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;

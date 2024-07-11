@@ -42,6 +42,10 @@ navigation:
                 label: Webinars
                 url: pensoft/media/webinars
                 icon: oc-icon-headphones
+            side-menu-media-categories-webinars:
+                label: 'Webinars Categories'
+                url: pensoft/media/webinarscategories
+                icon: icon-list
             side-menu-item:
                 label: Graphics
                 url: pensoft/media/graphics
@@ -50,3 +54,7 @@ navigation:
                 label: 'Galleries'
                 url: pensoft/media/galleries
                 icon: oc-icon-camera
+            side-menu-media-documents:
+                label: 'Documents'
+                url: pensoft/media/documents
+                icon: icon-file

@@ -148,7 +148,11 @@
     - 'Updated table pensoft_media_galleries'
     - update_pensoft_media_galleries.php
 1.1.51:
+<<<<<<< HEAD
     - 'Created table pensoft_media_webinars_categories'
+=======
+    - Created table pensoft_media_webinars_categories
+>>>>>>> 44c9ae1128aa311f08cbc2a084ac4e82a52fe545
     - create_webinars_categories_table.php
 1.1.52:
     - 'Updated table pensoft_media_webinars'

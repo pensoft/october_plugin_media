@@ -10,7 +10,7 @@ class MediaLogos extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\NestedTree;
-    
+
     use \October\Rain\Database\Traits\Revisionable;
 
     public $timestamps = false;
@@ -43,6 +43,7 @@ class MediaLogos extends Model
 		'file_jpg' => 'System\Models\File',
 		'file_png' => 'System\Models\File',
 		'file_eps' => 'System\Models\File',
+		'file_pdf' => 'System\Models\File',
 	];
     // Add  below relationship with Revision model
     public $morphMany = [
