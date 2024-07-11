@@ -179,3 +179,5 @@
 1.2.7:
     - 'Updated table pensoft_media_flyers'
     - builder_table_update_pensoft_media_flyers_7.php
+1.2.8:
+    - 'Updated table pensoft_media_flyers'
