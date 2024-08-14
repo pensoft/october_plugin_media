@@ -79,7 +79,7 @@ class Documents extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'title' => 'revisionable']
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
     public $attachOne = [
         'image' => 'System\Models\File',

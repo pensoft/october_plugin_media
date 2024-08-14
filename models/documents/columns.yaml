@@ -3,6 +3,6 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    title:
+        label: Title
         searchable: true
