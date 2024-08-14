@@ -44,3 +44,9 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+    category:
+        label: Category
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

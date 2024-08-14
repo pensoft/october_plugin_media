@@ -55,6 +55,7 @@ class Videos extends Model
             'scope' => 'isEnabled',
             'order' => 'id'
         ],
+        'category' => ['Pensoft\Media\Models\VideosCategory', 'key' => 'category_id']
 	];
 
 	public $attachOne = [
