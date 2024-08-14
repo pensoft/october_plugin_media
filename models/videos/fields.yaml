@@ -46,7 +46,6 @@ fields:
         type: relation
     category:
         label: Category
-        nameFrom: name
-        descriptionFrom: description
+        type: dropdown
+        placeholder: 'Select Category'
         span: auto
-        type: relation

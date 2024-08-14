@@ -67,6 +67,11 @@ class Videos extends Model
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\VideosCategory::pluck('name', 'id')->toArray();
+    }
+
     private function convertEmbed($url) {
         // check if the URL is a YouTube link
         if (preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\//', $url)) {
