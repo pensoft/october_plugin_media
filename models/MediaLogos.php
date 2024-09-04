@@ -44,6 +44,7 @@ class MediaLogos extends Model
 		'file_png' => 'System\Models\File',
 		'file_eps' => 'System\Models\File',
 		'file_pdf' => 'System\Models\File',
+        'file_zip' => 'System\Models\File',
 	];
     // Add  below relationship with Revision model
     public $morphMany = [

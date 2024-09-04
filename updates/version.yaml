@@ -191,3 +191,5 @@
     - builder_table_update_pensoft_media_videos_5.php
 1.2.12:
     - 'Videos categories'
+1.2.13:
+    - 'Zip field logos'
