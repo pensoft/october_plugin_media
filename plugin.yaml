@@ -34,6 +34,10 @@ navigation:
                 label: 'Press Releases'
                 url: pensoft/media/pressreleases
                 icon: oc-icon-twitch
+            side-menu-item3:
+                label: 'Press Releases Categories'
+                url: pensoft/media/presscategories
+                icon: icon-list
             side-menu-media-videos:
                 label: Videos
                 url: pensoft/media/videos

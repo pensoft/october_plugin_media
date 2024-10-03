@@ -193,3 +193,9 @@
     - 'Videos categories'
 1.2.13:
     - 'Zip field logos'
+1.2.14:
+    - 'Created table pensoft_media_press_categories'
+    - builder_table_create_pensoft_media_press_categories.php
+1.2.15:
+    - 'Updated table pensoft_media_pressreleases'
+    - builder_table_update_pensoft_media_pressreleases_2.php
