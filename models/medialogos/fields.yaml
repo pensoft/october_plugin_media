@@ -48,6 +48,14 @@ fields:
         span: left
         required: 1
         type: fileupload
+    file_zip:
+        label: 'Logo Pack (zip)'
+        mode: file
+        fileTypes: zip
+        required: 0
+        type: fileupload
+        span: left
+        comment: Contains all logo versions
     file_pdf:
         label: 'File PDF'
         mode: file

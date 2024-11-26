@@ -55,6 +55,7 @@ class Videos extends Model
             'scope' => 'isEnabled',
             'order' => 'id'
         ],
+        'category' => ['Pensoft\Media\Models\VideosCategory', 'key' => 'category_id']
 	];
 
 	public $attachOne = [
@@ -65,6 +66,11 @@ class Videos extends Model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
+
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\VideosCategory::pluck('name', 'id')->toArray();
+    }
 
     private function convertEmbed($url) {
         // check if the URL is a YouTube link
