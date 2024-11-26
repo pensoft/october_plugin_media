@@ -89,6 +89,13 @@ class Videos extends Model
         return $url;
     }
 
+    private function convertEmbedVimeo($url) {
+        $embed_url = '';
+        if (preg_match('/https:\/\/vimeo.com\/(\\d+)/', $url, $regs))
+            $embed_url = 'http://player.vimeo.com/video/' . $regs[1] ;
+        return $embed_url;
+    }
+
     public function beforeSave()
     {
         $url = $this->youtube_url;
@@ -101,6 +108,13 @@ class Videos extends Model
                 $embed_url = $this->convertEmbed($url);
                 $this->youtube_url = $embed_url;
             }
+        }
+        $vimeo_url = $this->vimeo_url;
+
+        // check if the URL is a YouTube link
+        if (preg_match('/^(https?:\/\/)?((www\.)?vimeo.com)\/(\\d+)/', $vimeo_url)) {
+            $vimeo_embed_url = $this->convertEmbedVimeo($vimeo_url);
+            $this->vimeo_url = $vimeo_embed_url;
         }
     }
 

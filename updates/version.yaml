@@ -167,3 +167,37 @@
     - 'Presentations multi lang'
 1.2.3:
     - 'Brand manual in Logos'
+1.2.4:
+    - 'Updated pensoft_media_documents'
+    - builder_table_create_pensoft_media_documents.php
+1.2.5:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_5.php
+1.2.6:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_6.php
+1.2.7:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_7.php
+1.2.8:
+    - 'Updated table pensoft_media_flyers'
+1.2.9:
+    - 'Updated table pensoft_media_flyers'
+1.2.10:
+    - 'Created table pensoft_media_videos_categories'
+    - builder_table_create_pensoft_media_videos_categories.php
+1.2.11:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_5.php
+1.2.12:
+    - 'Videos categories'
+1.2.13:
+    - 'Zip field logos'
+1.2.14:
+    - 'Created table pensoft_media_press_categories'
+    - builder_table_create_pensoft_media_press_categories.php
+1.2.15:
+    - 'Updated table pensoft_media_pressreleases'
+    - builder_table_update_pensoft_media_pressreleases_2.php
+1.2.16:
+    - 'Convert Embed Vimeo'
