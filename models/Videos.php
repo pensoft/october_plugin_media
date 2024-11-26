@@ -98,7 +98,7 @@ class Videos extends Model
     private function convertEmbedVimeo($url) {
         $embed_url = '';
         if (preg_match('/https:\/\/vimeo.com\/(\\d+)/', $url, $regs))
-            $embed_url = 'http://player.vimeo.com/video/' . $regs[1] ;
+            $embed_url = 'https://player.vimeo.com/video/' . $regs[1] ;
         return $embed_url;
     }
 
@@ -106,7 +106,7 @@ class Videos extends Model
     {
         $url = $this->youtube_url;
 
-        // check if the URL is a YouTube link
+        // check if the URL is a Vimeo link
         if (preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\//', $url)) {
             // check if the URL is already an embed link
             if (!preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\/embed\/(.+)$/', $url)) {

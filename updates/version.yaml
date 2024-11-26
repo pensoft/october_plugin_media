@@ -201,3 +201,5 @@
     - builder_table_update_pensoft_media_pressreleases_2.php
 1.2.16:
     - 'Convert Embed Vimeo'
+1.2.17:
+    - 'Convert Embed Vimeo fix'
