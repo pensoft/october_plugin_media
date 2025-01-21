@@ -66,3 +66,7 @@ navigation:
                 label: Documents
                 url: pensoft/media/documents
                 icon: icon-file
+            side-menu-item4:
+                label: Podcasts
+                url: pensoft/media/podcasts
+                icon: icon-microphone

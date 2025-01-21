@@ -203,3 +203,9 @@
     - 'Convert Embed Vimeo'
 1.2.17:
     - 'Convert Embed Vimeo fix'
+1.2.18:
+    - 'Created table pensoft_media_podcasts'
+    - builder_table_create_pensoft_media_podcasts.php
+1.2.19:
+    - 'Updated table pensoft_media_podcasts'
+    - builder_table_update_pensoft_media_podcasts.php
