@@ -1,0 +1,10 @@
+name: VideosCategories
+form: $/pensoft/media/models/videoscategory/fields.yaml
+modelClass: Pensoft\Media\Models\VideosCategory
+defaultRedirect: pensoft/media/videoscategories
+create:
+    redirect: 'pensoft/media/videoscategories/update/:id'
+    redirectClose: pensoft/media/videoscategories
+update:
+    redirect: pensoft/media/videoscategories
+    redirectClose: pensoft/media/videoscategories

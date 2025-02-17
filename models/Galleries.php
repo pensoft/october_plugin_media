@@ -6,6 +6,7 @@ use Model;
 use BackendAuth;
 use Validator;
 use Cms\Classes\Theme;
+
 /**
  * Model
  */
@@ -13,6 +14,7 @@ class Galleries extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\Sortable;
 
     public $timestamps = true;
 
@@ -48,7 +50,7 @@ class Galleries extends Model
         'show_on_homepage' => 'boolean',
         'show_on_ecological' => 'boolean',
     ];
-    
+
     // Multiple images can be attached to a gallery.
     public $attachMany = [
         'images' => 'System\Models\File',
@@ -85,7 +87,7 @@ class Galleries extends Model
     public function diff(){
         $history = $this->revision_history;
     }
-    
+
     /**
      * Provides a list of article options.
      * This is used when selecting an article to associate with the gallery.

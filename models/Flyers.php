@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use October\Rain\Database\Traits\Sortable;
 use Validator;
 /**
  * Model
@@ -11,6 +12,8 @@ class Flyers extends Model
     use \October\Rain\Database\Traits\Validation;
 
     use \October\Rain\Database\Traits\Revisionable;
+
+    use Sortable;
 
     public $timestamps = false;
 
@@ -60,6 +63,10 @@ class Flyers extends Model
         'file_lang_versions' => 'System\Models\File',
     ];
 
+    public $belongsTo = [
+        'category' => ['Pensoft\Media\Models\Category', 'key' => 'category_id']
+    ];
+
 
     // Add  below relationship with Revision model
     public $morphMany = [
@@ -74,6 +81,11 @@ class Flyers extends Model
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
+    }
+
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\Category::pluck('name', 'id')->toArray();
     }
 
     /**

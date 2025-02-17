@@ -1,0 +1,79 @@
+{% if categories %}
+<div class="container-fluid webinars-category-container">
+    <div class="container webinar-filters">
+        <form method="GET" action="{{ this.page.url }}">
+            <div class="filter">
+                <div class="dp-tabs-container">
+                    <div class="row category-tabs-webinars" id="category-tabs-webinars">
+                        <input type="hidden" name="category" value="{{ category }}">
+                        <a href="{{ this.page.url }}?category=all"
+                           class="tab {{ 'all' == category ? 'active' : '' }}">All Webinars</a>
+                        {% for key, name in categories %}
+                        <a href="{{ this.page.url }}?category={{ key }}"
+                           class="tab {{ key == category ? 'active' : '' }}">{{ name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if showCategoryIntro %}
+        {% if category == 'all' and jumbotron %}
+        <div class="category-intro container">
+            {{ jumbotron.body|raw }}
+        </div>
+        {% else %}
+        {% if currentCategoryIntro %}
+        <div class="category-intro container">
+            {{ currentCategoryIntro | raw }}
+        </div>
+        {% endif %}
+        {% endif %}
+    {% endif %}
+
+</div>
+{% endif %}
+
+{% if records.count %}
+<div class="container">
+    <div class="row">
+        {% for record in records %}
+        {# Use spaceless tag to remove spaces inside the A tag. #}
+        {% spaceless %}
+        <div class="col-md-6 col-xs-12">
+            <div class="video-content mb-3">
+                
+                {% if record.file %}
+                <video controls="" width="761" style="max-width: 100%; border-radius: 20px;">
+                    <source src="{{ record.file.path }}" type="video/mp4">
+                </video>
+
+                <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
+                
+                <p>
+                    <a class="btn btn-primary" href="{{ ''| page }}?{{ queries }}&download={{ record.file.id }}&file_name={{ record.name|replace({' ': '_'}) }}">Download</a>
+                </p>
+
+                {% endif %}
+
+                {% if record.youtube_url %}
+                <iframe width="761" height="447" style="max-width: 100%; border-radius: 22px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="{{ record.youtube_url }}"></iframe>
+                <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
+                {% endif %}
+
+                {% if record.vimeo_url %}
+                <iframe width="761" height="447" style="max-width: 100%; border-radius: 5px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{ record.vimeo_url }}"></iframe>
+                <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endspaceless %}
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <h1>No records found.</h1>
+</div>
+{% endif %}

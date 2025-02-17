@@ -44,21 +44,12 @@ fields:
             extension: auto
         span: auto
         type: fileupload
-#    file_language_versions:
-#        label: 'File language versions'
-#        prompt: 'Add new item'
-#        style: default
-#        span: auto
-#        type: repeater
-#        form:
-#            fields:
-#                file_version_label:
-#                    label: Label
-#                    span: auto
-#                    type: text
-#                file_version:
-#                    label: 'File version'
-#                    mode: file
-#                    span: auto
-#                    type: mediafinder
-#                    comment: 'Please choose from uploaded media'
+    category:
+        label: Category
+        type: dropdown
+        placeholder: 'Select Category'
+        span: auto
+    sort_order:
+        label: Order
+        span: auto
+        type: number

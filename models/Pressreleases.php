@@ -50,6 +50,10 @@ class Pressreleases extends Model
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
+    public $belongsTo = [
+        'category' => 'Pensoft\Media\Models\PressCategory'
+    ];
+
     // Add below function use for get current user details
     public function diff(){
         $history = $this->revision_history;

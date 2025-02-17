@@ -41,6 +41,11 @@ class Presentations extends Model
 		'presentation_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
 	];
+
+    public $attachMany = [
+        'file_lang_versions' => 'System\Models\File',
+    ];
+
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']

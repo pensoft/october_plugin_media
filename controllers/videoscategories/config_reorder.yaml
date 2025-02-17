@@ -1,0 +1,4 @@
+title: VideosCategories
+modelClass: Pensoft\Media\Models\VideosCategory
+toolbar:
+    buttons: reorder_toolbar

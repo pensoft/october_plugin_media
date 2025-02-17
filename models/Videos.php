@@ -55,6 +55,7 @@ class Videos extends Model
             'scope' => 'isEnabled',
             'order' => 'id'
         ],
+        'category' => ['Pensoft\Media\Models\VideosCategory', 'key' => 'category_id']
 	];
 
 	public $attachOne = [
@@ -65,6 +66,11 @@ class Videos extends Model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
+
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\VideosCategory::pluck('name', 'id')->toArray();
+    }
 
     private function convertEmbed($url) {
         // check if the URL is a YouTube link
@@ -89,11 +95,18 @@ class Videos extends Model
         return $url;
     }
 
+    private function convertEmbedVimeo($url) {
+        $embed_url = '';
+        if (preg_match('/https:\/\/vimeo.com\/(\\d+)/', $url, $regs))
+            $embed_url = 'https://player.vimeo.com/video/' . $regs[1] ;
+        return $embed_url;
+    }
+
     public function beforeSave()
     {
         $url = $this->youtube_url;
 
-        // check if the URL is a YouTube link
+        // check if the URL is a Vimeo link
         if (preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\//', $url)) {
             // check if the URL is already an embed link
             if (!preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\/embed\/(.+)$/', $url)) {
@@ -101,6 +114,13 @@ class Videos extends Model
                 $embed_url = $this->convertEmbed($url);
                 $this->youtube_url = $embed_url;
             }
+        }
+        $vimeo_url = $this->vimeo_url;
+
+        // check if the URL is a YouTube link
+        if (preg_match('/^(https?:\/\/)?((www\.)?vimeo.com)\/(\\d+)/', $vimeo_url)) {
+            $vimeo_embed_url = $this->convertEmbedVimeo($vimeo_url);
+            $this->vimeo_url = $vimeo_embed_url;
         }
     }
 
