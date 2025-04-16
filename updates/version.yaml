@@ -214,3 +214,6 @@
     - builder_table_update_pensoft_media_graphics.php
 1.2.21:
     - 'Updated table pensoft_media_graphics'
+1.2.22:
+    - 'Updated table pensoft_media_presentations'
+    - builder_table_update_pensoft_media_presentations.php
