@@ -217,3 +217,5 @@
 1.2.22:
     - 'Updated table pensoft_media_presentations'
     - builder_table_update_pensoft_media_presentations.php
+1.2.23:
+    - 'Permissions'
