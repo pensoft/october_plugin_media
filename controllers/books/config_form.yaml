@@ -1,0 +1,10 @@
+name: Books
+form: $/pensoft/media/models/books/fields.yaml
+modelClass: Pensoft\Media\Models\Books
+defaultRedirect: pensoft/media/books
+create:
+    redirect: 'pensoft/media/books/update/:id'
+    redirectClose: pensoft/media/books
+update:
+    redirect: pensoft/media/books
+    redirectClose: pensoft/media/books

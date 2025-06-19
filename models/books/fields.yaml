@@ -1,0 +1,33 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    cover:
+        label: Cover
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    file:
+        label: File
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    url:
+        label: Url
+        span: auto
+        type: text
+    country:
+        label: Country
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

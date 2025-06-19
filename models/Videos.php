@@ -52,7 +52,6 @@ class Videos extends Model
 		'parent' => 'Pensoft\Media\Models\Videos',
         'country' => [
             'RainLab\Location\Models\Country',
-            'scope' => 'isEnabled',
             'order' => 'id'
         ],
 	];

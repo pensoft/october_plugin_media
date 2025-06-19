@@ -1,0 +1,22 @@
+{{ form_ajax(__SELF__ ~ '::onFilterBooks', { update: {'components/filter_books': '#partialBooks'} }) }}
+<div class="row country-form ui form">
+    <div class="col-xs">
+        <div class="field">
+            <select name="filter_books" data-request="{{ __SELF__ ~ '::onFilterBooks'}}">
+
+                {% for id, countryDetails in countries %}
+                <option class="flag flag-{{ countryDetails.code }}" value="{{id}}" data-code="{{ countryDetails.code }}" {% if id == currentFilter %}selected{% endif %}>
+                    {{ countryDetails.name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>
+{{ form_close() }}
+
+
+
+<div class="filter_books work_packages" id="partialBooks">
+    {% partial 'components/filter_books' records=books %}
+</div>
