@@ -1,50 +1,68 @@
 fields:
-  name:
-    label: 'Name'
-    span: left
-    required: 1
-    type: text
-  logo_image:
-    label: 'Logo image'
-    mode: image
-    imageWidth: '200'
-    useCaption: true
-    fileTypes: svg,png,jpg
-    thumbOptions:
-      mode: crop
-      extension: auto
-    span: right
-    type: fileupload
-  file_jpg:
-    label: 'File JPG'
-    span: left
-    mode: file
-    useCaption: true
-    fileTypes: jpg
-    thumbOptions:
-      mode: crop
-      extension: auto
-    required: 1
-    type: fileupload
-  file_png:
-    label: 'File PNG'
-    span: left
-    mode: file
-    useCaption: true
-    fileTypes: png
-    thumbOptions:
-      mode: crop
-      extension: auto
-    required: 1
-    type: fileupload
-  file_eps:
-    label: 'File SVG'
-    span: left
-    mode: file
-    useCaption: true
-    fileTypes: svg
-    thumbOptions:
-      mode: crop
-      extension: auto
-    required: 1
-    type: fileupload
+    name:
+        label: Name
+        span: left
+        required: 1
+        type: text
+    logo_image:
+        label: 'Logo image'
+        mode: image
+        imageWidth: '200'
+        useCaption: true
+        fileTypes: 'svg,png,jpg'
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    file_jpg:
+        label: 'File JPG'
+        span: left
+        mode: file
+        useCaption: true
+        fileTypes: jpg
+        thumbOptions:
+            mode: crop
+            extension: auto
+        required: 1
+        type: fileupload
+    file_png:
+        label: 'File PNG'
+        span: left
+        mode: file
+        useCaption: true
+        fileTypes: png
+        thumbOptions:
+            mode: crop
+            extension: auto
+        required: 1
+        type: fileupload
+    file_eps:
+        label: 'File SVG'
+        mode: file
+        fileTypes: svg
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        type: fileupload
+    file_zip:
+        label: 'Logo Pack (zip)'
+        mode: file
+        fileTypes: zip
+        required: 0
+        type: fileupload
+        span: left
+        comment: Contains all logo versions
+    file_pdf:
+        label: 'File PDF'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        comment: 'Brand manual'

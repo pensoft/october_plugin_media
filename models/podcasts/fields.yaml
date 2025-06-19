@@ -1,0 +1,21 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    url:
+        label: 'Embed Url'
+        span: auto
+        required: 1
+        type: text
+        comment: 'ex.: https://open.spotify.com/embed/episode/4OoucnfN0Rmh1YXzdBp4zp'
+    file:
+        label: File
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

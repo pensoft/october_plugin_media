@@ -81,6 +81,8 @@ class Webinars extends Model
     public $hasMany = [];
     public $belongsTo = [
 		'parent' => 'Pensoft\Media\Models\Videos',
+        'category' => ['Pensoft\Media\Models\WebinarsCategory', 'key' => 'category_id']
+
 	];
     public $belongsToMany = [];
     public $morphTo = [];
@@ -105,25 +107,42 @@ class Webinars extends Model
         return BackendAuth::getUser()->id;
     }
 
+    public function getCategoryOptions()
+    {
+        return \Pensoft\Media\Models\WebinarsCategory::pluck('name', 'id')->toArray();
+    }
 
-    private function convertEmbed($url) {
-        // check if the URL is a YouTube link
+    private function convertEmbed($url)
+    {
+        // Check if the URL is a YouTube link
         if (preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\//', $url)) {
-            // check if the URL is already an embed link
+            // Check if the URL is already an embed link
             if (!preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\/embed\/(.+)$/', $url)) {
-                // modify the URL to include the embed code
-                $id = '';
-                if (strpos($url, 'youtu.be/') !== false) {
-                    // extract video id from youtu.be short link
-                    $id = substr(strstr($url, 'youtu.be/'), 9);
-                } else {
-                    // extract video id from youtube.com link
+                // Modify the URL to include the embed code
+                if (strpos($url, 'list=') !== false) {
+                    // This is a playlist URL
                     $query_string = parse_url($url, PHP_URL_QUERY);
                     parse_str($query_string, $query_params);
-                    $id = $query_params['v'] ?? '';
+                    $playlist_id = $query_params['list'] ?? '';
+                    if ($playlist_id) {
+                        return 'https://www.youtube.com/embed/videoseries?list=' . $playlist_id;
+                    }
+                } else {
+                    // This is a regular YouTube video URL
+                    $id = '';
+                    if (strpos($url, 'youtu.be/') !== false) {
+                        // Extract video id from youtu.be short link
+                        $id = substr(strstr($url, 'youtu.be/'), 9);
+                    } else {
+                        // Extract video id from youtube.com link
+                        $query_string = parse_url($url, PHP_URL_QUERY);
+                        parse_str($query_string, $query_params);
+                        $id = $query_params['v'] ?? '';
+                    }
+                    if ($id) {
+                        return 'https://www.youtube.com/embed/' . $id;
+                    }
                 }
-                $embed_url = 'https://www.youtube.com/embed/' . $id;
-                return $embed_url;
             }
         }
         return $url;
@@ -133,11 +152,11 @@ class Webinars extends Model
     {
         $url = $this->youtube_url;
 
-        // check if the URL is a YouTube link
+        // Check if the URL is a YouTube link
         if (preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\//', $url)) {
-            // check if the URL is already an embed link
+            // Check if the URL is already an embed link
             if (!preg_match('/^(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\/embed\/(.+)$/', $url)) {
-                // modify the URL to include the embed code
+                // Modify the URL to include the embed code
                 $embed_url = $this->convertEmbed($url);
                 $this->youtube_url = $embed_url;
             }

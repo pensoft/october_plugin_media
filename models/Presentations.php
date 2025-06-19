@@ -10,6 +10,7 @@ class Presentations extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\Sortable;
 
     public $timestamps = false;
 
@@ -41,6 +42,11 @@ class Presentations extends Model
 		'presentation_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
 	];
+
+    public $attachMany = [
+        'file_lang_versions' => 'System\Models\File',
+    ];
+
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']

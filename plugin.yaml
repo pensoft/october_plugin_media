@@ -34,20 +34,32 @@ navigation:
                 label: 'Press Releases'
                 url: pensoft/media/pressreleases
                 icon: oc-icon-twitch
+            side-menu-item3:
+                label: 'Press Releases Categories'
+                url: pensoft/media/presscategories
+                icon: icon-list
             side-menu-media-videos:
                 label: Videos
                 url: pensoft/media/videos
                 icon: oc-icon-video-camera
+            side-menu-item2:
+                label: 'Videos Categories'
+                url: pensoft/media/videoscategories
+                icon: icon-list
             side-menu-media-webinars:
                 label: Webinars
                 url: pensoft/media/webinars
                 icon: oc-icon-headphones
+            side-menu-media-categories-webinars:
+                label: 'Webinars Categories'
+                url: pensoft/media/webinarscategories
+                icon: icon-list
             side-menu-item:
                 label: Graphics
                 url: pensoft/media/graphics
                 icon: icon-file-image-o
             side-menu-media-galleries:
-                label: 'Galleries'
+                label: Galleries
                 url: pensoft/media/galleries
                 icon: oc-icon-camera
             side-menu-media-documents:

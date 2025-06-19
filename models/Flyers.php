@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use October\Rain\Database\Traits\Sortable;
 use Validator;
 /**
  * Model
@@ -11,6 +12,8 @@ class Flyers extends Model
     use \October\Rain\Database\Traits\Validation;
 
     use \October\Rain\Database\Traits\Revisionable;
+
+    use Sortable;
 
     public $timestamps = false;
 
