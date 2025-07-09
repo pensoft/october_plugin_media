@@ -34,7 +34,8 @@ class FilterBooks extends ComponentBase
         foreach ($countries as $country) {
             $formattedCountries[$country->id] = [
                 'name' => $country->name,
-                'code' => $country->code
+                'code' => $country->code,
+                'language' => $country->country_language
             ];
         }
 

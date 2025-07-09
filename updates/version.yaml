@@ -222,3 +222,5 @@
 1.2.24:
     - 'Created table pensoft_media_books'
     - builder_table_create_pensoft_media_books.php
+1.2.25:
+    - 'Books languages'
