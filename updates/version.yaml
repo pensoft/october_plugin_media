@@ -218,9 +218,18 @@
     - 'Updated table pensoft_media_presentations'
     - builder_table_update_pensoft_media_presentations.php
 1.2.23:
-    - 'Permissions'
+    - Permissions
 1.2.24:
     - 'Created table pensoft_media_books'
     - builder_table_create_pensoft_media_books.php
 1.2.25:
     - 'Books languages'
+1.2.26:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_5.php
+1.2.27:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_6.php
+1.2.28:
+    - 'Updated table pensoft_media_podcasts'
+    - builder_table_update_pensoft_media_podcasts_2.php

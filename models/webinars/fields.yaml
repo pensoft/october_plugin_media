@@ -1,31 +1,36 @@
 fields:
-  name:
-    label: 'Name'
-    span: left
-    required: 1
-    type: text
-  file:
-    label: 'File'
-    span: left
-    mode: file
-    useCaption: true
-    thumbOptions:
-      mode: crop
-      extension: auto
-    required: 0
-    type: fileupload
-  youtube_url:
-    label: 'Youtube URL'
-    span: left
-    required: 0
-    type: text
-  vimeo_url:
-    label: 'Vimeo URL'
-    span: left
-    required: 0
-    type: text
-  category:
-      label: 'Category'
-      type: 'dropdown'
-      placeholder: 'Select Category'
-      span: auto
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    description:
+        label: 'Short description'
+        size: small
+        span: auto
+        type: richeditor
+    file:
+        label: File
+        span: left
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        required: 0
+        type: fileupload
+    youtube_url:
+        label: 'Youtube URL'
+        span: left
+        required: 0
+        type: text
+    vimeo_url:
+        label: 'Vimeo URL'
+        span: left
+        required: 0
+        type: text
+    category:
+        label: Category
+        type: dropdown
+        placeholder: 'Select Category'
+        span: auto
