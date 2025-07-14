@@ -224,37 +224,12 @@ v1.2.24:
     - builder_table_create_pensoft_media_books.php
 v1.2.25:
     - 'Books languages'
-v1.2.26:
+1.2.26:
     - 'Updated table pensoft_media_webinars'
     - builder_table_update_pensoft_media_webinars_5.php
-v1.2.27:
+1.2.27:
     - 'Updated table pensoft_media_videos'
     - builder_table_update_pensoft_media_videos_6.php
-v1.2.28:
+1.2.28:
     - 'Updated table pensoft_media_podcasts'
     - builder_table_update_pensoft_media_podcasts_2.php
-v1.2.29:
-    - gitignore
-v1.2.30:
-    - 'Updated table pensoft_media_newsletters'
-    - builder_table_update_pensoft_media_newsletters_3.php
-v1.2.31:
-    - 'Updated table pensoft_media_flyers'
-    - builder_table_update_pensoft_media_flyers_9.php
-
-4.0.1:
-    - 'Migrated to OctoberCMS 4 and PHP 8.2'
-4.0.2:
-    - 'Updated table pensoft_media_flyers'
-    - builder_table_update_pensoft_media_flyers_8.php
-4.0.3:
-    - 'Updated table pensoft_media_webinars'
-    - builder_table_update_pensoft_media_webinars_6.php
-4.0.4:
-    - 'Updated table pensoft_media_videos'
-    - builder_table_update_pensoft_media_videos_7.php
-4.0.5:
-    - 'Add sort_order column to logos, pressreleases, videos, and webinars tables'
-    - add_sort_order_to_nested_models.php
-4.0.6:
-    - 'composer installers 1 and 2'
