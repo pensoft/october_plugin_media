@@ -2,6 +2,7 @@
 
 use Model;
 use BackendAuth;
+use October\Rain\Database\Traits\Sortable;
 use Validator;
 
 /**
@@ -10,8 +11,10 @@ use Validator;
 class Newsletters extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     use \October\Rain\Database\Traits\Revisionable;
+
+    use Sortable;
 
     public $timestamps = false;
 
@@ -22,7 +25,7 @@ class Newsletters extends Model
     protected $revisionable = ["id","name"];
 
     /**
-     * 
+     *
      */
     protected $fillable = [
         'name',
@@ -58,7 +61,7 @@ class Newsletters extends Model
     protected $jsonable = [
         'file_language_versions'
     ];
-    
+
 	public $attachOne = [
 		'newsletter_image' => 'System\Models\File',
 		'file' => 'System\Models\File',
@@ -67,7 +70,7 @@ class Newsletters extends Model
     public $attachMany = [
         'file_lang_versions' => 'System\Models\File',
     ];
-    
+
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
@@ -77,7 +80,7 @@ class Newsletters extends Model
     public function diff(){
         $history = $this->revision_history;
     }
-    
+
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;

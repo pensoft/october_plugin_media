@@ -1,0 +1,4 @@
+title: Newsletters
+modelClass: Pensoft\Media\Models\Newsletters
+toolbar:
+    buttons: reorder_toolbar
