@@ -234,5 +234,7 @@
     - 'Updated table pensoft_media_podcasts'
     - builder_table_update_pensoft_media_podcasts_2.php
 1.2.29:
+    - 'gitignore'
+1.2.30:
     - 'Updated table pensoft_media_newsletters'
     - builder_table_update_pensoft_media_newsletters_3.php
