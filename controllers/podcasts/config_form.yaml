@@ -1,0 +1,10 @@
+name: Podcasts
+form: $/pensoft/media/models/podcasts/fields.yaml
+modelClass: Pensoft\Media\Models\Podcasts
+defaultRedirect: pensoft/media/podcasts
+create:
+    redirect: 'pensoft/media/podcasts/update/:id'
+    redirectClose: pensoft/media/podcasts
+update:
+    redirect: pensoft/media/podcasts
+    redirectClose: pensoft/media/podcasts

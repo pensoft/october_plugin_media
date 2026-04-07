@@ -1,0 +1,10 @@
+name: PressCategories
+form: $/pensoft/media/models/presscategory/fields.yaml
+modelClass: Pensoft\Media\Models\PressCategory
+defaultRedirect: pensoft/media/presscategories
+create:
+    redirect: 'pensoft/media/presscategories/update/:id'
+    redirectClose: pensoft/media/presscategories
+update:
+    redirect: pensoft/media/presscategories
+    redirectClose: pensoft/media/presscategories

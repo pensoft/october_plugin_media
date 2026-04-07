@@ -1,0 +1,23 @@
+fields:
+    name:
+        label: Title
+        span: auto
+        type: text
+    image:
+        label: Preview
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    file:
+        label: File
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

@@ -1,0 +1,5 @@
+title: Books
+nameFrom: title
+modelClass: Pensoft\Media\Models\Books
+toolbar:
+    buttons: reorder_toolbar

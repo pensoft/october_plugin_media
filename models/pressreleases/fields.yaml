@@ -1,0 +1,40 @@
+fields:
+    name:
+        label: Name
+        span: left
+        required: 1
+        type: text
+    date:
+        label: Date
+        mode: date
+        span: right
+        default: now
+        type: datepicker
+    description:
+        label: 'pensoft.media::lang.plugin.description'
+        size: large
+        span: auto
+        type: richeditor
+    link:
+        label: Links
+        prompt: 'Add new item'
+        maxItems: '5'
+        style: default
+        span: auto
+        type: repeater
+        form:
+            fields:
+                text:
+                    label: 'Link text'
+                    span: auto
+                    type: text
+                url:
+                    label: 'Link URL'
+                    span: auto
+                    type: text
+    category:
+        label: Category
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        type: relation

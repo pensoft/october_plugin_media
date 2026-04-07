@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    logo:
+      label: 'Logo'
+      type: partial
+      searchable: true
+      sortable: true
+      path: $/pensoft/media/models/medialogos/_file.htm
+

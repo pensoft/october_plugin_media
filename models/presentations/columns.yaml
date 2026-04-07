@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    presentation:
+        label: Presentation
+        type: partial
+        searchable: true
+        sortable: true
+        path: $/pensoft/media/models/presentations/_file.htm

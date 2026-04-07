@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    file:
+        label: File
+        type: partial
+        searchable: true
+        sortable: true
+        path: $/pensoft/media/models/videos/_file.htm
+    youtube_url:
+        label: 'Youtube URL'
+        type: text
+    vimeo_url:
+        label: 'Vimeo URL'
+        type: text
+    country:
+        label: Country
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/pensoft/media/partials/_country.htm

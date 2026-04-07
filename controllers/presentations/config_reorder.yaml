@@ -1,0 +1,5 @@
+title: Presentations
+nameFrom: name
+modelClass: Pensoft\Media\Models\Presentations
+toolbar:
+    buttons: reorder_toolbar

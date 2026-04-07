@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    category_intro:
+        label: Category Intro
+        type: richeditor
+        span: left

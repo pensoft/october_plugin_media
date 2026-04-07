@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/pensoft/media/models/category/fields.yaml
+
+# Model Class name
+modelClass: Pensoft\Media\Models\Category
+
+# Default redirect location
+defaultRedirect: pensoft/media/categories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: pensoft/media/categories/update/:id
+    redirectClose: pensoft/media/categories
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: pensoft/media/categories
+    redirectClose: pensoft/media/categories
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

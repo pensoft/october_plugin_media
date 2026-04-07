@@ -1,0 +1,42 @@
+{% if galleries %}
+    {% for gallery in galleries %}
+    <div class="row justify-content-center gallery-item pb-4">
+        <div class="col-xs-12 text-center gallery-title">
+            <h1>{{gallery.name}}</h1>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <div class="news_content_wrapper">
+                <div class="gallery_container">
+                    {% for key1, value1 in gallery.images %}
+                    <div class="mySlides">
+                        <div class="image-title text-center"><p>{{ value1.title }}</p></div>
+                        <img class="img-fluid" src="{{ value1.thumb(auto, 600, {'mode':'crop'})}}" alt="{{ value1.title|default('') }}">
+                        <div class="image-caption text-center"><p>{{ value1.description }}</p></div>
+                    </div>
+
+                    {% endfor %}
+
+                    <a class="prev" onclick="plusSlides(-1)"></a>
+                    <a class="next" onclick="plusSlides(1)"></a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                    <div class="col-xs-12 text-center pb-5">
+                        <a class="btn btn-primary" href="{{'media-center'|page}}/galleries/{{gallery.id}}">{{'Preview and Download' |_}}</a>
+                    </div>
+                    <div class="row">
+                        {% for key2, value2 in gallery.images %}
+                        <div class="col-md-2 col-xs-3 column">
+                            <img class="demo cursor" src="{{ value2.thumb(155, 103, {'mode':'crop'})}}" style="width:100%" onclick="currentSlide(({{key2}} + 1))" alt="{{ value2.title|default('') }}">
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endif %}

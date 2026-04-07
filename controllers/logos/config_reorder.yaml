@@ -1,0 +1,5 @@
+title: Logos
+nameFrom: name
+modelClass: Pensoft\Media\Models\MediaLogos
+toolbar:
+    buttons: reorder_toolbar

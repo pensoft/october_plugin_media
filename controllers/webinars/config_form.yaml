@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Webinar
+
+# Model Form Field configuration
+form: $/pensoft/media/models/webinars/fields.yaml
+
+# Model Class name
+modelClass: Pensoft\Media\Models\Webinars
+
+# Default redirect location
+defaultRedirect: pensoft/media/webinars
+
+# Create page
+create:
+    title: Create Webinar
+    redirect: pensoft/media/webinars/update/:id
+    redirectClose: pensoft/media/webinars
+
+# Update page
+update:
+    title: Edit Webinar
+    redirect: pensoft/media/webinars
+    redirectClose: pensoft/media/webinars
+
+# Preview page
+preview:
+    title: Preview Webinar

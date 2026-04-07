@@ -1,0 +1,12 @@
+list: $/pensoft/media/models/books/columns.yaml
+modelClass: Pensoft\Media\Models\Books
+title: Books
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pensoft/media/books/update/:id'
