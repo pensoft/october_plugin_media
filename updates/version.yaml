@@ -238,6 +238,9 @@ v1.2.29:
 v1.2.30:
     - 'Updated table pensoft_media_newsletters'
     - builder_table_update_pensoft_media_newsletters_3.php
+v1.2.31:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_9.php
 
 4.0.1:
     - 'Migrated to OctoberCMS 4 and PHP 8.2'
