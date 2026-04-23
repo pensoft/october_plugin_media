@@ -253,3 +253,5 @@ v1.2.30:
 4.0.5:
     - 'Add sort_order column to logos, pressreleases, videos, and webinars tables'
     - add_sort_order_to_nested_models.php
+4.0.6:
+    - 'composer installers 1 and 2'
