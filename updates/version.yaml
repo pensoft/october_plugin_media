@@ -245,3 +245,6 @@
     - 'Restore 1.2.31 entry in version.yaml'
 1.2.34:
     - 'Make flyers_9 migration idempotent (column existence check)'
+1.2.35:
+    - 'Register add_sort_order_to_nested_models migration'
+    - add_sort_order_to_nested_models.php
