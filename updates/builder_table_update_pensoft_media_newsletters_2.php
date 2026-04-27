@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaNewsletters2 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_newsletters', 'file_language_versions')) {
+            return;
+        }
+
         Schema::table('pensoft_media_newsletters', function(Blueprint $table)
         {
             $table->text('file_language_versions')->nullable();
@@ -16,11 +20,13 @@ class BuilderTableUpdatePensoftMediaNewsletters2 extends Migration
 
     public function down(): void
     {
-        if( Schema::hasTable('pensoft_media_newsletters')){
-            Schema::table('pensoft_media_newsletters', function(Blueprint $table)
-            {
-                $table->dropIfExists('file_language_versions');
-            });
+        if (!Schema::hasColumn('pensoft_media_newsletters', 'file_language_versions')) {
+            return;
         }
+
+        Schema::table('pensoft_media_newsletters', function(Blueprint $table)
+        {
+            $table->dropColumn('file_language_versions');
+        });
     }
 }

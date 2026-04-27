@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaFlyers5 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_flyers', 'sort_order')) {
+            return;
+        }
+
         Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->integer('sort_order')->nullable();
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaFlyers5 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_flyers', 'sort_order')) {
+            return;
+        }
+
         Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->dropColumn('sort_order');

@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaFlyers9 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_flyers', 'url')) {
+            return;
+        }
+
         Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->string('url')->nullable();
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaFlyers9 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_flyers', 'url')) {
+            return;
+        }
+
         Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->dropColumn('url');

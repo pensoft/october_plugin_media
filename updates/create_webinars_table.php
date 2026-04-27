@@ -8,6 +8,10 @@ class CreateWebinarsTable extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('pensoft_media_webinars')) {
+            return;
+        }
+
         Schema::create('pensoft_media_webinars', function (Blueprint $table) {
             $table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();

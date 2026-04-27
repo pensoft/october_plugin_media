@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaFlyers4 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_flyers', 'category_id')) {
+            return;
+        }
+
         Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->integer('category_id')->nullable();
@@ -17,12 +21,14 @@ class BuilderTableUpdatePensoftMediaFlyers4 extends Migration
 
     public function down(): void
     {
-        if (Schema::hasTable('pensoft_media_flyers')) {
-            Schema::table('pensoft_media_flyers', function(Blueprint $table)
-            {
-                $table->dropForeign(['category_id']);
-                $table->dropColumn('category_id');
-            });
+        if (!Schema::hasColumn('pensoft_media_flyers', 'category_id')) {
+            return;
         }
+
+        Schema::table('pensoft_media_flyers', function(Blueprint $table)
+        {
+            $table->dropForeign(['category_id']);
+            $table->dropColumn('category_id');
+        });
     }
 }

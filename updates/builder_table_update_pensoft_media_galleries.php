@@ -10,8 +10,12 @@ class BuilderTableUpdatePensoftMediaGalleries extends Migration
     {
         Schema::table('pensoft_media_galleries', function(Blueprint $table)
         {
-            $table->boolean('event_related')->default(0);
-            $table->integer('event_id')->unsigned()->nullable();
+            if (!Schema::hasColumn('pensoft_media_galleries', 'event_related')) {
+                $table->boolean('event_related')->default(0);
+            }
+            if (!Schema::hasColumn('pensoft_media_galleries', 'event_id')) {
+                $table->integer('event_id')->unsigned()->nullable();
+            }
         });
     }
 
@@ -19,8 +23,12 @@ class BuilderTableUpdatePensoftMediaGalleries extends Migration
     {
         Schema::table('pensoft_media_galleries', function(Blueprint $table)
         {
-            $table->dropColumn('event_related');
-            $table->dropColumn('event_id');
+            if (Schema::hasColumn('pensoft_media_galleries', 'event_related')) {
+                $table->dropColumn('event_related');
+            }
+            if (Schema::hasColumn('pensoft_media_galleries', 'event_id')) {
+                $table->dropColumn('event_id');
+            }
         });
     }
 }

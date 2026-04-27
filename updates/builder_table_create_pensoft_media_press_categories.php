@@ -8,6 +8,10 @@ class BuilderTableCreatePensoftMediaPressCategories extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('pensoft_media_press_categories')) {
+            return;
+        }
+
         Schema::create('pensoft_media_press_categories', function(Blueprint $table)
         {
             $table->engine = 'InnoDB';

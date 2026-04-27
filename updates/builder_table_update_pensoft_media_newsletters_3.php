@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaNewsletters3 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_newsletters', 'sort_order')) {
+            return;
+        }
+
         Schema::table('pensoft_media_newsletters', function(Blueprint $table)
         {
             $table->integer('sort_order')->default(1);
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaNewsletters3 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_newsletters', 'sort_order')) {
+            return;
+        }
+
         Schema::table('pensoft_media_newsletters', function(Blueprint $table)
         {
             $table->dropColumn('sort_order');

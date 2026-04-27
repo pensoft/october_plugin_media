@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaVideos2 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_videos', 'type')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->integer('type')->default(1);
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaVideos2 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_videos', 'type')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->dropColumn('type');
