@@ -243,3 +243,5 @@
     - builder_table_update_pensoft_media_flyers_9.php
 1.2.33:
     - 'Restore 1.2.31 entry in version.yaml'
+1.2.34:
+    - 'Make flyers_9 migration idempotent (column existence check)'
