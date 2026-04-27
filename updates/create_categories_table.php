@@ -11,6 +11,10 @@ class CreateCategoriesTable extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('pensoft_media_categories')) {
+            return;
+        }
+
         Schema::create('pensoft_media_categories', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');

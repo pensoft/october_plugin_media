@@ -250,3 +250,5 @@
     - add_sort_order_to_nested_models.php
 1.2.36:
     - 'Make column-add migrations idempotent (Schema::hasColumn guards); resolve merge conflicts in podcasts_2, videos_6, webinars_5'
+1.2.37:
+    - 'Make Schema::create migrations idempotent (Schema::hasTable guards)'

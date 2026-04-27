@@ -8,6 +8,10 @@ class BuilderTableCreatePensoftMediaBooks extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasTable('pensoft_media_books')) {
+            return;
+        }
+
         Schema::create('pensoft_media_books', function(Blueprint $table)
         {
             $table->engine = 'InnoDB';
