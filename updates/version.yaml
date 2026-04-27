@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 v1.0.1:
     - 'Initialize plugin.'
 v1.0.2:
@@ -257,4 +258,3 @@ v1.2.31:
     - 'Add sort_order column to logos, pressreleases, videos, and webinars tables'
     - add_sort_order_to_nested_models.php
 4.0.6:
-    - 'composer installers 1 and 2'

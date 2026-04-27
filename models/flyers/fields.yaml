@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 fields:
     name:
         label: Name
@@ -58,4 +59,3 @@ fields:
         label: Order
         span: auto
         default: '1'
-        type: number
