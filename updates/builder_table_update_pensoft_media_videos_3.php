@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaVideos3 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_videos', 'country')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->integer('country')->nullable();
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaVideos3 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_videos', 'country')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->dropColumn('country');

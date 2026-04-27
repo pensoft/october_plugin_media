@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaVideos extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_videos', 'published_at')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->timestamp('published_at')->default('now()');
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaVideos extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_videos', 'published_at')) {
+            return;
+        }
+
         Schema::table('pensoft_media_videos', function(Blueprint $table)
         {
             $table->dropColumn('published_at');

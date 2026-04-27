@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaWebinars4 extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_webinars', 'category_intro')) {
+            return;
+        }
+
         Schema::table('pensoft_media_webinars', function(Blueprint $table)
         {
             $table->text('category_intro')->nullable();
@@ -16,6 +20,10 @@ class BuilderTableUpdatePensoftMediaWebinars4 extends Migration
 
     public function down(): void
     {
+        if (!Schema::hasColumn('pensoft_media_webinars', 'category_intro')) {
+            return;
+        }
+
         Schema::table('pensoft_media_webinars', function(Blueprint $table)
         {
             $table->dropColumn('category_intro');

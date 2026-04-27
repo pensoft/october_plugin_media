@@ -8,6 +8,10 @@ class BuilderTableUpdatePensoftMediaNewsletters extends Migration
 {
     public function up(): void
     {
+        if (Schema::hasColumn('pensoft_media_newsletters', 'url')) {
+            return;
+        }
+
         Schema::table('pensoft_media_newsletters', function(Blueprint $table)
         {
             $table->string('url')->nullable();
@@ -16,11 +20,13 @@ class BuilderTableUpdatePensoftMediaNewsletters extends Migration
 
     public function down(): void
     {
-        if (Schema::hasColumn('pensoft_media_newsletters', 'url')){
-            Schema::table('pensoft_media_newsletters', function(Blueprint $table)
-            {
-                $table->dropColumn('url');
-            });
+        if (!Schema::hasColumn('pensoft_media_newsletters', 'url')) {
+            return;
         }
+
+        Schema::table('pensoft_media_newsletters', function(Blueprint $table)
+        {
+            $table->dropColumn('url');
+        });
     }
 }
