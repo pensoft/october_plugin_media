@@ -224,3 +224,33 @@
     - builder_table_create_pensoft_media_books.php
 1.2.25:
     - 'Books languages'
+1.2.26:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_5.php
+1.2.27:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_6.php
+1.2.28:
+    - 'Updated table pensoft_media_podcasts'
+    - builder_table_update_pensoft_media_podcasts_2.php
+1.2.29:
+    - 'gitignore'
+1.2.30:
+    - 'Updated table pensoft_media_newsletters'
+    - builder_table_update_pensoft_media_newsletters_3.php
+1.2.31:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_9.php
+1.2.33:
+    - 'Restore 1.2.31 entry in version.yaml'
+1.2.34:
+    - 'Make flyers_9 migration idempotent (column existence check)'
+1.2.35:
+    - 'Register add_sort_order_to_nested_models migration'
+    - add_sort_order_to_nested_models.php
+1.2.36:
+    - 'Make column-add migrations idempotent (Schema::hasColumn guards); resolve merge conflicts in podcasts_2, videos_6, webinars_5'
+1.2.37:
+    - 'Make Schema::create migrations idempotent (Schema::hasTable guards)'
+1.2.38:
+    - 'Filter books fix'

@@ -27,6 +27,7 @@ class FilterBooks extends ComponentBase
     {
 //        $this->addJs('/plugins/pensoft/media/assets/def.js');
         $this->page['books'] = $this->filterBooks()->get();
+        $this->page['currentFilter'] = $this->currentCountryId();
 
         $countries = Country::isEnabled()->get();
 
@@ -64,8 +65,14 @@ class FilterBooks extends ComponentBase
      */
     private function filterBooks()
     {
-        $countryId = post('filter_books') ?: 3;//english by default
+        return Books::where('country_id', $this->currentCountryId());
+    }
 
-        return Books::where('country_id', $countryId);
+    /**
+     * Returns the active country id — posted value, or English (3) by default.
+     */
+    private function currentCountryId(): int
+    {
+        return (int) (post('filter_books') ?: 3);
     }
 }
