@@ -13,7 +13,9 @@ class PressCategory extends Model
 
     use \October\Rain\Database\Traits\Sortable;
 
-    protected $dates = ['deleted_at'];
+    protected $casts = [
+        'deleted_at' => 'datetime',
+    ];
 
 
     /**

@@ -3,13 +3,15 @@
 use Model;
 use BackendAuth;
 use Validator;
+use System\Models\File;
+
 /**
  * Model
  */
 class Videos extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-	use \October\Rain\Database\Traits\NestedTree;
+	use \October\Rain\Database\Traits\Sortable;
     use \October\Rain\Database\Traits\Revisionable;
 
     public $timestamps = false;
@@ -49,26 +51,26 @@ class Videos extends Model
 	protected $nullable = ['parent_id'];
 
 	public $belongsTo = [
-		'parent' => 'Pensoft\Media\Models\Videos',
+		'parent' => Videos::class,
         'country' => [
-            'RainLab\Location\Models\Country',
+            \RainLab\Location\Models\Country::class,
             'order' => 'id'
         ],
-        'category' => ['Pensoft\Media\Models\VideosCategory', 'key' => 'category_id']
+        'category' => [VideosCategory::class, 'key' => 'category_id']
 	];
 
 	public $attachOne = [
-		'file' => 'System\Models\File',
+		'file' => File::class,
 	];
 
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     public function getCategoryOptions()
     {
-        return \Pensoft\Media\Models\VideosCategory::pluck('name', 'id')->toArray();
+        return VideosCategory::pluck('name', 'id')->toArray();
     }
 
     private function convertEmbed($url) {
@@ -141,7 +143,7 @@ class Videos extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

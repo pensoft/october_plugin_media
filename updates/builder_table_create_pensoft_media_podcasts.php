@@ -1,13 +1,18 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class BuilderTableCreatePensoftMediaPodcasts extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('pensoft_media_podcasts', function($table)
+        if (Schema::hasTable('pensoft_media_podcasts')) {
+            return;
+        }
+
+        Schema::create('pensoft_media_podcasts', function(Blueprint $table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -18,8 +23,8 @@ class BuilderTableCreatePensoftMediaPodcasts extends Migration
             $table->string('url');
         });
     }
-    
-    public function down()
+
+    public function down(): void
     {
         Schema::dropIfExists('pensoft_media_podcasts');
     }

@@ -4,9 +4,9 @@
         <h1>{{gallery.name}}</h1>
     </div>
     <div class="col-xs-12 text-center pb-5">
-        {{ form_open({request: __SELF__ ~ '::onDownload'}) }}
+		<form data-request="{{ __SELF__ ~ '::onDownload' }}">
         <button type="submit" href="#" class="btn btn-primary">{{'Download all images' |_}}</button>
-        {{ form_close() }}
+		</form>
     </div>
     <div class="col-xs-12 col-md-10">
         <div class="news_content_wrapper">

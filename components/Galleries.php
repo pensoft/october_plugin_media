@@ -22,7 +22,7 @@ class Galleries extends ComponentBase
      *
      * @return array The name and description of the component
      */
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'Gallery Component',
@@ -35,7 +35,7 @@ class Galleries extends ComponentBase
      *
      * @return array Component properties definitions
      */
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'id' => [

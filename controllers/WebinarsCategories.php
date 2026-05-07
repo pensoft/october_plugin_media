@@ -10,22 +10,14 @@ class WebinarsCategories extends Controller
 {
     public $implement = [
         \Backend\Behaviors\FormController::class,
-        \Backend\Behaviors\ListController::class
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\ReorderController::class,
     ];
 
-    /**
-     * @var string formConfig file
-     */
-    public $formConfig = 'config_form.yaml';
+    public string $formConfig = 'config_form.yaml';
+    public string $listConfig = 'config_list.yaml';
+    public string $reorderConfig = 'config_reorder.yaml';
 
-    /**
-     * @var string listConfig file
-     */
-    public $listConfig = 'config_list.yaml';
-
-    /**
-     * __construct the controller
-     */
     public function __construct()
     {
         parent::__construct();

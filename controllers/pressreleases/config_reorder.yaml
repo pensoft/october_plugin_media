@@ -1,4 +1,5 @@
 title: Pressreleases
+nameFrom: name
 modelClass: Pensoft\Media\Models\Pressreleases
 toolbar:
     buttons: reorder_toolbar

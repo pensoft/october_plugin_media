@@ -2,14 +2,15 @@
 
 use Pensoft\Media\Models\Videos;
 use Schema;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class UpdatePensoftMediaVideos extends Migration
 {
-	public function up()
+	public function up(): void
 	{
 		if (!Schema::hasTable('pensoft_media_videos')) {
-			Schema::table('pensoft_media_videos', function ($table) {
+			Schema::table('pensoft_media_videos', function (Blueprint $table) {
 				$table->integer('parent_id')->default(0)->change();
 			});
 		}
@@ -21,9 +22,9 @@ class UpdatePensoftMediaVideos extends Migration
 		}
 	}
 
-	public function down()
+	public function down(): void
 	{
-		Schema::table('pensoft_media_videos', function ($table) {
+		Schema::table('pensoft_media_videos', function (Blueprint $table) {
 			$table->integer('parent_id')->nullable()->change();
 		});
 	}

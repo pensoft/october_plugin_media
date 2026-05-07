@@ -5,14 +5,19 @@ use BackendMenu;
 
 class Newsletter extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
-    
-    public $listConfig = 'config_list.yaml';
-    public $formConfig = 'config_form.yaml';
+    public $implement = [
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ReorderController::class,
+    ];
+
+    public string $listConfig = 'config_list.yaml';
+    public string $formConfig = 'config_form.yaml';
+    public string $reorderConfig = 'config_reorder.yaml';
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-media-newsletters');
+        BackendMenu::setContext('Pensoft.Media', 'media', 'side-menu-media-newsletter');
     }
 }

@@ -8,7 +8,7 @@ use Pensoft\Media\Models\Galleries as GalleriesModel;
  */
 class PageGalleries extends ComponentBase
 {
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'PageGalleries Component',
@@ -16,7 +16,7 @@ class PageGalleries extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'pageType' => [
@@ -27,7 +27,7 @@ class PageGalleries extends ComponentBase
             ]
         ];
     }
-    
+
     public function onRun()
     {
         $pageType = $this->property('pageType');
@@ -42,7 +42,7 @@ class PageGalleries extends ComponentBase
             $galleries = GalleriesModel::where('show_on_ecological', true)->get();
             return $galleries;
         }
-    
+
         return [];
     }
 }

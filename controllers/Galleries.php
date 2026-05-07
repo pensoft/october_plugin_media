@@ -11,13 +11,13 @@ class Galleries extends Controller
         \Backend\Behaviors\ReorderController::class,
     ];
 
-    public $listConfig = 'config_list.yaml';
-    public $formConfig = 'config_form.yaml';
-    public $reorderConfig = 'config_reorder.yaml';
+    public string $listConfig = 'config_list.yaml';
+    public string $formConfig = 'config_form.yaml';
+    public string $reorderConfig = 'config_reorder.yaml';
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-galleries');
+        BackendMenu::setContext('Pensoft.Media', 'media', 'side-menu-media-galleries');
     }
 }

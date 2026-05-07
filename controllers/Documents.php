@@ -5,14 +5,17 @@ use BackendMenu;
 
 class Documents extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
-    
-    public $listConfig = 'config_list.yaml';
-    public $formConfig = 'config_form.yaml';
+    public $implement = [
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\FormController::class,
+    ];
+
+    public string $listConfig = 'config_list.yaml';
+    public string $formConfig = 'config_form.yaml';
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-item');
+        BackendMenu::setContext('Pensoft.Media', 'media', 'side-menu-media-documents');
     }
 }

@@ -3,12 +3,13 @@
 use Pensoft\Media\Models\Webinars;
 use Pensoft\Media\Models\Videos;
 use Schema;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 use System\Models\File;
 
 class UpdatePensoftMediaWebinars extends Migration
 {
-	public function up()
+	public function up(): void
 	{
 		$videos = Videos::all();
 
@@ -46,7 +47,7 @@ class UpdatePensoftMediaWebinars extends Migration
 		}
 	}
 
-	public function down()
+	public function down(): void
 	{
 
 	}

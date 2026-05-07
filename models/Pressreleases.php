@@ -3,6 +3,7 @@
 use Model;
 use BackendAuth;
 use Validator;
+
 /**
  * Model
  */
@@ -10,7 +11,7 @@ class Pressreleases extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Revisionable;
-    use \October\Rain\Database\Traits\NestedTree;
+    use \October\Rain\Database\Traits\Sortable;
 
 
     public $timestamps = false;
@@ -47,11 +48,11 @@ class Pressreleases extends Model
 	];
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     public $belongsTo = [
-        'category' => 'Pensoft\Media\Models\PressCategory'
+        'category' => PressCategory::class
     ];
 
     // Add below function use for get current user details
@@ -72,7 +73,7 @@ class Pressreleases extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

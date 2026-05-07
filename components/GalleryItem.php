@@ -12,7 +12,7 @@ class GalleryItem extends ComponentBase
     /** @var GalleriesModel The loaded gallery record */
     public $record;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'GalleryItem Component',
@@ -20,7 +20,7 @@ class GalleryItem extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'id' => [

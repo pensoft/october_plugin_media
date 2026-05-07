@@ -14,7 +14,7 @@ class FIlterVideos extends ComponentBase
      *
      * @return array An associative array with the name and description of the component.
      */
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'FIlterVideos Component',
@@ -27,13 +27,13 @@ class FIlterVideos extends ComponentBase
      *
      * @return array An empty array, as this component does not have properties defined.
      */
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [];
     }
 
     /**
-     * Executes when the component is run. Adds JS, retrieves video data and country information, 
+     * Executes when the component is run. Adds JS, retrieves video data and country information,
      * and sets them to the page context.
      */
     public function onRun()
@@ -77,7 +77,7 @@ class FIlterVideos extends ComponentBase
             '#partialVideos' => $this->renderPartial('@videos', ['videos' => $videos])
         ];
     }
-    
+
     /**
      * Filters videos based on the country language provided.
      *
@@ -109,6 +109,6 @@ class FIlterVideos extends ComponentBase
         } else {
             return Videos::whereIn('country_id', $englishSpeakingCountries);
         }
-        
+
     }
 }

@@ -11,7 +11,9 @@ class VideosCategory extends Model
     use \October\Rain\Database\Traits\Sortable;
     use \October\Rain\Database\Traits\SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $casts = [
+        'deleted_at' => 'datetime',
+    ];
 
 
     /**
@@ -26,7 +28,7 @@ class VideosCategory extends Model
     ];
 
     public $hasMany = [
-        'videos' => ['Pensoft\Media\Models\Videos']
+        'videos' => [Videos::class]
     ];
 
     public function scopeListCategories($query)

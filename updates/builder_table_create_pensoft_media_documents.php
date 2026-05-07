@@ -1,12 +1,12 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class BuilderTableCreatePensoftMediaDocuments extends Migration
 {
-    public function up()
+    public function up(): void
     {
         if(!Schema::hasTable('pensoft_media_documents'))
         {
@@ -20,7 +20,7 @@ class BuilderTableCreatePensoftMediaDocuments extends Migration
         }
     }
 
-    public function down()
+    public function down(): void
     {
         if(Schema::hasTable('pensoft_media_documents'))
         {

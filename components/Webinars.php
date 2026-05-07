@@ -15,7 +15,7 @@ class Webinars extends ComponentBase
     public $showCategoryIntro;
     public $jumbotron;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'Webinars Component',
@@ -23,7 +23,7 @@ class Webinars extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [
             'showCategoryIntro' => [

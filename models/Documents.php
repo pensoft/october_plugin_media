@@ -2,6 +2,7 @@
 
 use Model;
 use Validator;
+use System\Models\File;
 
 /**
  * Documents Model
@@ -37,7 +38,10 @@ class Documents extends Model
     /**
      * @var array Attributes to be cast to native types
      */
-    protected $casts = [];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     /**
      * @var array jsonable attribute names that are json encoded and decoded from the database
@@ -62,14 +66,6 @@ class Documents extends Model
     ];
 
     /**
-     * @var array dates attributes that should be mutated to dates
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at'
-    ];
-
-    /**
      * @var array hasOne and other relations
      */
     public $hasOne = [];
@@ -79,11 +75,11 @@ class Documents extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
     public $attachOne = [
-        'image' => 'System\Models\File',
-		'file' => 'System\Models\File',
+        'image' => File::class,
+		'file' => File::class,
     ];
     public $attachMany = [];
 
@@ -96,7 +92,7 @@ class Documents extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

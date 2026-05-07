@@ -2,6 +2,7 @@
 
 use Model;
 use October\Rain\Database\Traits\Sortable;
+use System\Models\File;
 
 /**
  * Model
@@ -14,7 +15,9 @@ class Podcasts extends Model
 
     use Sortable;
 
-    protected $dates = ['deleted_at'];
+    protected $casts = [
+        'deleted_at' => 'datetime',
+    ];
 
 
     /**
@@ -29,7 +32,7 @@ class Podcasts extends Model
     ];
 
     public $attachOne = [
-        'file' => 'System\Models\File',
+        'file' => File::class,
     ];
 
     private function convertEmbed($url) {

@@ -9,7 +9,7 @@ use RainLab\Location\Models\Country;
  */
 class FilterBooks extends ComponentBase
 {
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'FilterBooks Component',
@@ -17,7 +17,7 @@ class FilterBooks extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [];
     }

@@ -3,13 +3,15 @@
 use Model;
 use BackendAuth;
 use Validator;
+use System\Models\File;
+
 /**
  * Model
  */
 class MediaLogos extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-	use \October\Rain\Database\Traits\NestedTree;
+	use \October\Rain\Database\Traits\Sortable;
 
     use \October\Rain\Database\Traits\Revisionable;
 
@@ -39,16 +41,16 @@ class MediaLogos extends Model
     ];
 
 	public $attachOne = [
-		'logo_image' => 'System\Models\File',
-		'file_jpg' => 'System\Models\File',
-		'file_png' => 'System\Models\File',
-		'file_eps' => 'System\Models\File',
-		'file_pdf' => 'System\Models\File',
-        'file_zip' => 'System\Models\File',
+		'logo_image' => File::class,
+		'file_jpg' => File::class,
+		'file_png' => File::class,
+		'file_eps' => File::class,
+		'file_pdf' => File::class,
+        'file_zip' => File::class,
 	];
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     // Add below function use for get current user details
@@ -69,7 +71,7 @@ class MediaLogos extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

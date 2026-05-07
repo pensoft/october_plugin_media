@@ -1,14 +1,15 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class BuilderTableCreatePensoftMediaVideos extends Migration
 {
-    public function up()
+    public function up(): void
     {
         if (!Schema::hasTable('pensoft_media_videos')) {
-            Schema::create('pensoft_media_videos', function($table)
+            Schema::create('pensoft_media_videos', function(Blueprint $table)
             {
                 $table->engine = 'InnoDB';
                 $table->increments('id')->unsigned();
@@ -24,8 +25,8 @@ class BuilderTableCreatePensoftMediaVideos extends Migration
             });
         }
     }
-    
-    public function down()
+
+    public function down(): void
     {
         if (Schema::hasTable('pensoft_media_videos')) {
             Schema::dropIfExists('pensoft_media_videos');

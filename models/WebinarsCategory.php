@@ -53,7 +53,10 @@ class WebinarsCategory extends Model
     /**
      * @var array Attributes to be cast to native types
      */
-    protected $casts = [];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     /**
      * @var array jsonable attribute names that are json encoded and decoded from the database
@@ -71,26 +74,18 @@ class WebinarsCategory extends Model
     protected $hidden = [];
 
     /**
-     * @var array dates attributes that should be mutated to dates
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at'
-    ];
-
-    /**
      * @var array hasOne and other relations
      */
     public $hasOne = [];
     public $hasMany = [
-        'webinars' => ['Pensoft\Media\Models\Webinars']
+        'webinars' => [Webinars::class]
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
     public $attachOne = [];
     public $attachMany = [];
@@ -124,7 +119,7 @@ class WebinarsCategory extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

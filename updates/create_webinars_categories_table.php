@@ -1,7 +1,7 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 /**
@@ -9,9 +9,9 @@ use October\Rain\Database\Updates\Migration;
  */
 class CreateWebinarsCategoriesTable extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        if (!Schema::hasTable('pensoft_media_webinars_categories')) 
+        if (!Schema::hasTable('pensoft_media_webinars_categories'))
         {
             Schema::create('pensoft_media_webinars_categories', function (Blueprint $table) {
                 $table->engine = 'InnoDB';
@@ -23,9 +23,9 @@ class CreateWebinarsCategoriesTable extends Migration
         }
     }
 
-    public function down()
+    public function down(): void
     {
-        if (Schema::hasTable('pensoft_media_webinars_categories')) 
+        if (Schema::hasTable('pensoft_media_webinars_categories'))
         {
             Schema::dropIfExists('pensoft_media_webinars_categories');
         }

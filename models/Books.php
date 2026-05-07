@@ -3,6 +3,7 @@
 use Model;
 use October\Rain\Database\Traits\Sortable;
 use RainLab\Location\Models\Country as CountryModel;
+use System\Models\File;
 
 /**
  * Model
@@ -14,7 +15,9 @@ class Books extends Model
     use \October\Rain\Database\Traits\SoftDelete;
     use Sortable;
 
-    protected $dates = ['deleted_at'];
+    protected $casts = [
+        'deleted_at' => 'datetime',
+    ];
 
 
     /**
@@ -30,15 +33,15 @@ class Books extends Model
 
     public $belongsTo = [
         'country' => [
-            'RainLab\Location\Models\Country',
+            \RainLab\Location\Models\Country::class,
             'scope' => 'isEnabled',
             'order' => 'id'
         ],
     ];
 
     public $attachOne = [
-        'file' => 'System\Models\File',
-        'cover' => 'System\Models\File',
+        'file' => File::class,
+        'cover' => File::class,
     ];
 
 }

@@ -3,13 +3,15 @@
 use Model;
 use BackendAuth;
 use Validator;
+use System\Models\File;
+
 /**
  * Webinars Model
  */
 class Webinars extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-	use \October\Rain\Database\Traits\NestedTree;
+	use \October\Rain\Database\Traits\Sortable;
     use \October\Rain\Database\Traits\Revisionable;
 
     public $timestamps = false;
@@ -49,7 +51,10 @@ class Webinars extends Model
     /**
      * @var array Attributes to be cast to native types
      */
-    protected $casts = [];
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     /**
      * @var array Attributes to be cast to JSON
@@ -67,35 +72,27 @@ class Webinars extends Model
     protected $hidden = [];
 
     /**
-     * @var array Attributes to be cast to Argon (Carbon) instances
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at'
-    ];
-
-    /**
      * @var array Relations
      */
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-		'parent' => 'Pensoft\Media\Models\Videos',
-        'category' => ['Pensoft\Media\Models\WebinarsCategory', 'key' => 'category_id']
+		'parent' => Videos::class,
+        'category' => [WebinarsCategory::class, 'key' => 'category_id']
 
 	];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $attachOne = [
-		'file' => 'System\Models\File',
+		'file' => File::class,
 	];
-    
+
     public $attachMany = [];
 
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     // Add below function use for get current user details
@@ -109,7 +106,7 @@ class Webinars extends Model
 
     public function getCategoryOptions()
     {
-        return \Pensoft\Media\Models\WebinarsCategory::pluck('name', 'id')->toArray();
+        return WebinarsCategory::pluck('name', 'id')->toArray();
     }
 
     private function convertEmbed($url)
@@ -163,7 +160,7 @@ class Webinars extends Model
         }
     }
 
-    
+
         /**
      * Add translation support to this model, if available.
      *
@@ -173,7 +170,7 @@ class Webinars extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

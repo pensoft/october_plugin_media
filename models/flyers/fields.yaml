@@ -25,6 +25,11 @@ fields:
             extension: auto
         required: 1
         type: fileupload
+    url:
+        label: URL
+        comment: 'If set, the Download button on the frontend links to this URL (e.g. Zenodo) instead of the uploaded file.'
+        span: left
+        type: text
     file_print:
         label: 'File (Print)'
         span: left
@@ -52,4 +57,5 @@ fields:
     sort_order:
         label: Order
         span: auto
+        default: '1'
         type: number

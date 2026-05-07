@@ -17,18 +17,18 @@ class Categories extends Controller
     /**
      * @var string formConfig file
      */
-    public $formConfig = 'config_form.yaml';
+    public string $formConfig = 'config_form.yaml';
 
     /**
      * @var string listConfig file
      */
-    public $listConfig = 'config_list.yaml';
-    
+    public string $listConfig = 'config_list.yaml';
+
     /**
      * @var string reorderConfig file
      */
-    public $reorderConfig = 'config_reorder.yaml';
-    
+    public string $reorderConfig = 'config_reorder.yaml';
+
     /**
      * __construct the controller
      */

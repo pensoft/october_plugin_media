@@ -1,21 +1,22 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 class BuilderTableUpdatePensoftMediaFlyers7 extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::table('pensoft_media_flyers', function($table)
+        Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->integer('sort_order')->default(0)->change();
         });
     }
-    
-    public function down()
+
+    public function down(): void
     {
-        Schema::table('pensoft_media_flyers', function($table)
+        Schema::table('pensoft_media_flyers', function(Blueprint $table)
         {
             $table->integer('sort_order')->default(1)->change();
         });

@@ -10,7 +10,7 @@ class GalleriesList extends ComponentBase
 {
     public $records;
 
-    public function componentDetails()
+    public function componentDetails(): array
     {
         return [
             'name' => 'GalleriesList Component',
@@ -18,7 +18,7 @@ class GalleriesList extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function defineProperties(): array
     {
         return [];
     }

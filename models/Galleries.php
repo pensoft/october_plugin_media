@@ -6,6 +6,7 @@ use Model;
 use BackendAuth;
 use Validator;
 use Cms\Classes\Theme;
+use System\Models\File;
 
 /**
  * Model
@@ -53,7 +54,7 @@ class Galleries extends Model
 
     // Multiple images can be attached to a gallery.
     public $attachMany = [
-        'images' => 'System\Models\File',
+        'images' => File::class,
     ];
 
     // Optional relationship with the Article model.
@@ -63,19 +64,19 @@ class Galleries extends Model
 
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     public $belongsToMany = [
         'articles' => [
-            'Pensoft\Articles\Models\Article',
+            \Pensoft\Articles\Models\Article::class,
             'table' => 'pensoft_gallery_article_pivot',
             'key' => 'gallery_id',
             'otherKey' => 'article_id',
             'order' => 'created_at desc'
         ],
         'events' => [
-            'Pensoft\Calendar\Models\Entry',
+            \Pensoft\Calendar\Models\Entry::class,
             'table' => 'pensoft_gallery_entry_pivot',
             'key' => 'gallery_id',
             'otherKey' => 'entry_id',
@@ -140,7 +141,7 @@ class Galleries extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;

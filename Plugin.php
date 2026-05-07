@@ -2,26 +2,18 @@
 
 use Pensoft\Media\Components\FilterBooks;
 use Pensoft\Media\Components\FIlterVideos;
-use SaurabhDhariwal\Revisionhistory\Classes\Diff as Diff;
+use Pensoft\Media\Components\Galleries;
+use Pensoft\Media\Components\PageGalleries;
+use Pensoft\Media\Components\GalleriesList;
+use Pensoft\Media\Components\Webinars;
 use System\Classes\PluginBase;
-use System\Models\Revision as Revision;
 use Schema;
 
 class Plugin extends PluginBase
 {
 
-    public function boot(){
-        /* Extetions for revision */
-        Revision::extend(function($model){
-            /* Revison can access to the login user */
-            $model->belongsTo['user'] = ['Backend\Models\User'];
-
-            /* Revision can use diff function */
-            $model->addDynamicMethod('getDiff', function() use ($model){
-                return Diff::toHTML(Diff::compare($model->old_value, $model->new_value));
-            });
-        });
-
+    public function boot(): void
+    {
         if (Schema::hasTable('rainlab_location_countries') && !Schema::hasColumn('rainlab_location_countries', 'country_language')){
             Schema::table('rainlab_location_countries', function ($table) {
                 $table->string('country_language')->nullable();
@@ -44,19 +36,19 @@ class Plugin extends PluginBase
         }
     }
 
-    public function registerComponents()
+    public function registerComponents(): array
     {
         return [
             FIlterVideos::class => 'filter_videos',
             FilterBooks::class => 'filter_books',
-            'Pensoft\Media\Components\Galleries' => 'galleries',
-            'Pensoft\Media\Components\PageGalleries' => 'page_galleries',
-            'Pensoft\Media\Components\GalleriesList' => 'galleries_list',
-            'Pensoft\Media\Components\Webinars' => 'webinars'
+            Galleries::class => 'galleries',
+            PageGalleries::class => 'page_galleries',
+            GalleriesList::class => 'galleries_list',
+            Webinars::class => 'webinars'
         ];
     }
 
-    public function registerPermissions()
+    public function registerPermissions(): array
     {
         return [
             'pensoft.media.access' => [
@@ -66,7 +58,7 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerNavigation()
+    public function registerNavigation(): array
     {
         return [
             'media' => [
@@ -108,7 +100,7 @@ class Plugin extends PluginBase
                     'side-menu-media-pressreleases' => [
                         'label'       => 'Press Releases',
                         'url'         => \Backend::url('pensoft/media/pressreleases'),
-                        'icon'        => 'oc-icon-twitch',
+                        'icon'        => 'icon-bullhorn',
                         'permissions' => ['pensoft.media.*'],
                     ],
                     'side-menu-item3' => [

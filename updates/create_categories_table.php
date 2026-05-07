@@ -1,7 +1,7 @@
 <?php namespace Pensoft\Media\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
 /**
@@ -9,8 +9,12 @@ use October\Rain\Database\Updates\Migration;
  */
 class CreateCategoriesTable extends Migration
 {
-    public function up()
+    public function up(): void
     {
+        if (Schema::hasTable('pensoft_media_categories')) {
+            return;
+        }
+
         Schema::create('pensoft_media_categories', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -20,7 +24,7 @@ class CreateCategoriesTable extends Migration
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('pensoft_media_categories');
     }

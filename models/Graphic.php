@@ -4,6 +4,8 @@ use Model;
 use BackendAuth;
 use Validator;
 use October\Rain\Database\Traits\Sortable;
+use System\Models\File;
+
 /**
  * Model
  */
@@ -41,13 +43,13 @@ class Graphic extends Model
     ];
 
 	public $attachOne = [
-		'image' => 'System\Models\File',
-		'file' => 'System\Models\File',
+		'image' => File::class,
+		'file' => File::class,
 	];
 
     // Add  below relationship with Revision model
     public $morphMany = [
-        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+        'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
     // Add below function use for get current user details
@@ -68,7 +70,7 @@ class Graphic extends Model
     {
         Validator::extend(
             'json',
-            function ($attribute, $value, $parameters) {
+            function (string $attribute, mixed $value, array $parameters) {
                 json_decode($value);
 
                 return json_last_error() == JSON_ERROR_NONE;
