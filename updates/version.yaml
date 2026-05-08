@@ -256,3 +256,6 @@ v1.2.31:
     - 'Add sort_order column to logos, pressreleases, videos, and webinars tables'
     - add_sort_order_to_nested_models.php
 4.0.6:
+    - 'fix'
+4.0.7:
+    - 'fix'
