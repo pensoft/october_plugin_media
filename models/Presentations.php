@@ -20,7 +20,7 @@ class Presentations extends Model
     public $revisionableLimit = 200;
 
     // Add for revisions on particular field
-    protected $revisionable = ["id","name"];
+    protected $revisionable = ["id","name","url"];
 
     /**
      * @var string The database table used by the model.
