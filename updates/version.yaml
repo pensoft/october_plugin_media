@@ -254,3 +254,6 @@
     - 'Make Schema::create migrations idempotent (Schema::hasTable guards)'
 1.2.38:
     - 'Filter books fix'
+1.2.39:
+    - 'Updated table pensoft_media_presentations'
+    - builder_table_update_pensoft_media_presentations_2.php

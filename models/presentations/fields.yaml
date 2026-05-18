@@ -4,6 +4,10 @@ fields:
     span: left
     required: 1
     type: text
+  url:
+    label: 'URL'
+    span: left
+    type: text
   presentation_image:
     label: 'Presentation image'
     mode: image
