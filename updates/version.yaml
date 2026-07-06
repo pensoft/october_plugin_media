@@ -259,3 +259,5 @@
     - builder_table_update_pensoft_media_presentations_2.php
 1.2.40:
     - 'Fix Videos category field so it actually saves to category_id'
+1.2.41:
+    - 'Enable reordering for Documents (Sortable trait + ReorderController); sort_order column already present'
