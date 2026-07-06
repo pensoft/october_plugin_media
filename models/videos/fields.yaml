@@ -49,7 +49,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
-    category:
+    category_id:
         label: Category
         type: dropdown
         placeholder: 'Select Category'
