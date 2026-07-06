@@ -68,7 +68,7 @@ class Videos extends Model
         'revision_history' => [\System\Models\Revision::class, 'name' => 'revisionable']
     ];
 
-    public function getCategoryOptions()
+    public function getCategoryIdOptions()
     {
         return VideosCategory::pluck('name', 'id')->toArray();
     }

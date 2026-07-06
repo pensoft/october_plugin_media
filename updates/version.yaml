@@ -257,3 +257,5 @@
 1.2.39:
     - 'Updated table pensoft_media_presentations'
     - builder_table_update_pensoft_media_presentations_2.php
+1.2.40:
+    - 'Fix Videos category field so it actually saves to category_id'
