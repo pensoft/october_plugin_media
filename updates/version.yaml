@@ -261,3 +261,5 @@
     - 'Fix Videos category field so it actually saves to category_id'
 1.2.41:
     - 'Enable reordering for Documents (Sortable trait + ReorderController); sort_order column already present'
+1.2.42:
+    - 'Add image attachment to Press Releases (preview image for link cards on the Resources page)'

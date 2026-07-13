@@ -15,6 +15,18 @@ fields:
         size: large
         span: auto
         type: richeditor
+    image:
+        label: Image
+        mode: image
+        fileTypes: svg,png,jpg
+        imageWidth: '200'
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+        comment: 'Preview image shown on this press release''s link cards (e.g. the Resources page)'
     link:
         label: Links
         prompt: 'Add new item'

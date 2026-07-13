@@ -55,6 +55,10 @@ class Pressreleases extends Model
         'category' => PressCategory::class
     ];
 
+    public $attachOne = [
+        'image' => \System\Models\File::class,
+    ];
+
     // Add below function use for get current user details
     public function diff(){
         $history = $this->revision_history;
