@@ -259,3 +259,5 @@ v1.2.31:
     - 'fix'
 4.0.7:
     - 'fix'
+4.0.8:
+    - 'fixed missing table'
