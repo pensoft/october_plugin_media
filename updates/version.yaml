@@ -263,3 +263,6 @@
     - 'Enable reordering for Documents (Sortable trait + ReorderController); sort_order column already present'
 1.2.42:
     - 'Add image attachment to Press Releases (preview image for link cards on the Resources page)'
+1.2.43:
+    - 'Videos: add captions track attachment and transcript column (WCAG 1.2.2)'
+    - builder_table_update_pensoft_media_videos_8.php

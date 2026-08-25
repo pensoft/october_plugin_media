@@ -47,23 +47,26 @@
                 {% if record.file %}
                 <video controls="" width="761" style="max-width: 100%; border-radius: 20px;">
                     <source src="{{ record.file.path }}" type="video/mp4">
+                    {% if record.captions %}
+                    <track kind="captions" src="{{ record.captions.path }}" srclang="en" label="English" default>
+                    {% endif %}
                 </video>
 
                 <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
                 
                 <p>
-                    <a class="btn btn-primary" href="{{ ''| page }}?{{ queries }}&download={{ record.file.id }}&file_name={{ record.name|replace({' ': '_'}) }}">Download</a>
+                    <a class="btn btn-primary" href="{{ ''| page }}?{{ queries }}&download={{ record.file.id }}&file_name={{ record.name|replace({' ': '_'}) }}" aria-label="Download {{ record.name|striptags }}">Download</a>
                 </p>
 
                 {% endif %}
 
                 {% if record.youtube_url %}
-                <iframe width="761" height="447" style="max-width: 100%; border-radius: 22px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="{{ record.youtube_url }}"></iframe>
+                <iframe title="{{ record.name|striptags }} - YouTube video" loading="lazy" width="761" height="447" style="max-width: 100%; border-radius: 22px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="{{ record.youtube_url }}"></iframe>
                 <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
                 {% endif %}
 
                 {% if record.vimeo_url %}
-                <iframe width="761" height="447" style="max-width: 100%; border-radius: 5px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{ record.vimeo_url }}"></iframe>
+                <iframe title="{{ record.name|striptags }} - Vimeo video" loading="lazy" width="761" height="447" style="max-width: 100%; border-radius: 5px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{ record.vimeo_url }}"></iframe>
                 <p class="card_title font-weight-bold mt-1">{{ record.name }}</p>
                 {% endif %}
             </div>

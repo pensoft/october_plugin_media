@@ -19,6 +19,20 @@ fields:
             extension: auto
         required: 0
         type: fileupload
+    captions:
+        label: 'Captions track (WebVTT)'
+        commentAbove: 'Upload a .vtt caption track for the video file above. Required by WCAG 1.2.2 - review auto-generated captions for accuracy before uploading them here.'
+        span: left
+        mode: file
+        fileTypes: vtt
+        required: 0
+        type: fileupload
+    transcript:
+        label: Transcript
+        commentAbove: 'Plain-text transcript shown under the video, for people who cannot use captions.'
+        size: small
+        span: auto
+        type: richeditor
     youtube_url:
         label: 'Youtube URL'
         span: left

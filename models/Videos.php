@@ -61,6 +61,9 @@ class Videos extends Model
 
 	public $attachOne = [
 		'file' => File::class,
+		// WCAG 1.2.2 Captions (Prerecorded): a WebVTT track for self-hosted video.
+		// Auto-generated captions must be reviewed before being uploaded here.
+		'captions' => File::class,
 	];
 
     // Add  below relationship with Revision model
