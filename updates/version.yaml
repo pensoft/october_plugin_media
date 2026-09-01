@@ -266,3 +266,5 @@
 1.2.43:
     - 'Videos: add captions track attachment and transcript column (WCAG 1.2.2)'
     - builder_table_update_pensoft_media_videos_8.php
+1.2.44:
+    - 'Fix Videos save failing when Category is left empty (Nullable trait on category_id)'

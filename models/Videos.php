@@ -13,6 +13,7 @@ class Videos extends Model
     use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\Sortable;
     use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\Nullable;
 
     public $timestamps = false;
 
@@ -48,7 +49,7 @@ class Videos extends Model
         'published'
     ];
 
-	protected $nullable = ['parent_id'];
+	protected $nullable = ['parent_id', 'category_id'];
 
 	public $belongsTo = [
 		'parent' => Videos::class,
