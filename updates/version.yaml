@@ -268,3 +268,5 @@
     - builder_table_update_pensoft_media_videos_8.php
 1.2.44:
     - 'Fix Videos save failing when Category is left empty (Nullable trait on category_id)'
+1.2.45:
+    - 'Fix 1.0.8 migration failing on fresh install (no model query before sort_order exists)'
