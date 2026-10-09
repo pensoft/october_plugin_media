@@ -2,7 +2,8 @@
 	<div class="row country-form ui form">
 		<div class="col-xs">
 			<div class="field">
-				<select name="filter_books" data-request="{{ __SELF__ ~ '::onFilterBooks'}}">
+				<label class="sr-only" for="filter_books">Filter by language</label>
+				<select id="filter_books" name="filter_books" data-request="{{ __SELF__ ~ '::onFilterBooks'}}" data-a11y-update-message="Book list updated">
 					{% for id, countryDetails in countries %}
 					<option class="flag flag-{{ countryDetails.code }}" value="{{id}}" data-code="{{ countryDetails.code }}" {% if id == currentFilter %}selected{% endif %}>
 						{{countryDetails.language}}

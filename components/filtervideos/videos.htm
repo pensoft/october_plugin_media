@@ -30,18 +30,21 @@
                             {% if record.file %}
                             <video controls="" width="100%">
                                 <source src="{{record.file.path}}#t=0.9" type="video/mp4">
+						{% if record.captions %}
+						<track kind="captions" src="{{record.captions.path}}" srclang="en" label="English" default>
+						{% endif %}
                             </video>
 <!--                            <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p>-->
-                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
+                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" aria-label="Download {{record.name|striptags}}">Download</a></p>
                             {% endif %}
 
                             {% if record.youtube_url %}
-                            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
+                            <iframe title="{{record.name|striptags}} - YouTube video" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
                             <p>&nbsp;</p>
                             {% endif %}
 
                             {% if record.vimeo_url %}
-                            <iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
+                            <iframe title="{{record.name|striptags}} - Vimeo video" loading="lazy" width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
                             <p>&nbsp;</p>
                             {% endif %}
                         </div>
@@ -69,18 +72,21 @@
                             {% if record.file %}
                             <video controls="" width="100%">
                                 <source src="{{record.file.path}}#t=0.9" type="video/mp4">
+						{% if record.captions %}
+						<track kind="captions" src="{{record.captions.path}}" srclang="en" label="English" default>
+						{% endif %}
                             </video>
                             <!-- <p>Attachment: {{record.file.file_name}}, {{record.file.size}}</p> -->
-                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}">Download</a></p>
+                            <p><a class="btn btn-primary large fluid download" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}&file_name={{record.name|replace({' ': '_'})}}" aria-label="Download {{record.name|striptags}}">Download</a></p>
                             {% endif %}
 
                             {% if record.youtube_url %}
-                            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
+                            <iframe title="{{record.name|striptags}} - YouTube video" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="100%" height="320"></iframe>
                             <p>&nbsp;</p>
                             {% endif %}
 
                             {% if record.vimeo_url %}
-                            <iframe width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
+                            <iframe title="{{record.name|striptags}} - Vimeo video" loading="lazy" width="100%" height="320" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="{{record.vimeo_url}}"></iframe>
                             <p>&nbsp;</p>
                             {% endif %}
                         </div>

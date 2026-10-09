@@ -86,6 +86,8 @@ class Webinars extends Model
     public $morphOne = [];
     public $attachOne = [
 		'file' => File::class,
+		// WCAG 1.2.2 Captions (Prerecorded): a WebVTT track for the uploaded video.
+		'captions' => File::class,
 	];
 
     public $attachMany = [];
