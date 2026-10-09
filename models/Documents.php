@@ -15,7 +15,14 @@ class Documents extends Model
 
     use \October\Rain\Database\Traits\Revisionable;
 
+    use \October\Rain\Database\Traits\Nullable;
+
     protected $revisionable = ["id","title"];
+
+    /**
+     * @var array Attributes saved as NULL when empty (category is optional)
+     */
+    protected $nullable = ['category_id'];
 
     /**
      * @var string table associated with the model
@@ -72,7 +79,9 @@ class Documents extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'category' => [DocumentsCategory::class, 'key' => 'category_id'],
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

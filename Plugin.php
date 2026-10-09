@@ -151,6 +151,12 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-file',
                         'permissions' => ['pensoft.media.*'],
                     ],
+                    'side-menu-media-documents-categories' => [
+                        'label'       => 'Documents Categories',
+                        'url'         => \Backend::url('pensoft/media/documentscategories'),
+                        'icon'        => 'icon-list',
+                        'permissions' => ['pensoft.media.*'],
+                    ],
                     'side-menu-item4' => [
                         'label'       => 'Podcasts',
                         'url'         => \Backend::url('pensoft/media/podcasts'),

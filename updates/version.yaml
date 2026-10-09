@@ -263,3 +263,14 @@
     - 'Enable reordering for Documents (Sortable trait + ReorderController); sort_order column already present'
 1.2.42:
     - 'Add image attachment to Press Releases (preview image for link cards on the Resources page)'
+1.2.43:
+    - 'Videos: add captions track attachment and transcript column (WCAG 1.2.2)'
+    - builder_table_update_pensoft_media_videos_8.php
+1.2.44:
+    - 'Fix Videos save failing when Category is left empty (Nullable trait on category_id)'
+1.2.45:
+    - 'Fix 1.0.8 migration failing on fresh install (no model query before sort_order exists)'
+1.2.46:
+    - 'Add Documents Categories and optional category relation on Documents'
+    - builder_table_create_pensoft_media_documents_categories.php
+    - builder_table_update_pensoft_media_documents.php

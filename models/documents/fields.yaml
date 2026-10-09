@@ -3,6 +3,12 @@ fields:
         label: Title
         span: auto
         type: text
+    category:
+        label: Category
+        type: relation
+        nameFrom: title
+        emptyOption: '-- No category --'
+        span: auto
     image:
         label: Preview
         mode: image
