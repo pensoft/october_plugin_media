@@ -1,0 +1,32 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        required: 1
+        type: text
+    description:
+        label: 'Short description'
+        size: small
+        span: auto
+        type: richeditor
+    url:
+        label: 'Embed Url'
+        span: auto
+        required: 1
+        type: text
+        comment: 'ex.: https://open.spotify.com/embed/episode/4OoucnfN0Rmh1YXzdBp4zp'
+    youtube_url:
+        label: 'Youtube URL'
+        span: auto
+        required: 0
+        type: text
+        comment: 'ex.: https://www.youtube.com/watch?v=VIDEO_ID or https://youtu.be/VIDEO_ID'
+    file:
+        label: File
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

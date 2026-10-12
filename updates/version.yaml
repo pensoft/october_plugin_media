@@ -53,3 +53,227 @@
 1.1.12:
     - 'Updated table pensoft_media_videos'
     - builder_table_update_pensoft_media_videos.php
+1.1.13:
+    - 'Revision history'
+1.1.14:
+    - 'Revision history with fixes'
+1.1.15:
+    - 'Revision history with fixes in plugin.php'
+1.1.16:
+    - 'Updated table pensoft_media_newsletters'
+    - builder_table_update_pensoft_media_newsletters.php
+1.1.17:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_2.php
+1.1.18:
+    - 'Created table builder_table_create_pensoft_media_galleries'
+    - builder_table_create_pensoft_media_galleries.php
+1.1.19:
+    - 'Created new section galleries'
+1.1.20:
+    - 'New field in flyer module'
+1.1.21:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_3.php
+1.1.22:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_4.php
+1.1.23:
+    - 'Updated table rainlab_location_countries'
+    - update_countries_language.php
+1.1.24:
+    - 'Register component fix'
+1.1.25:
+    - 'Register component fix'
+1.1.26:
+    - 'Filter videos component dropdowns'
+1.1.27:
+    - 'Filter videos component dropdowns'
+1.1.28:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers.php
+1.1.29:
+    - Translate
+1.1.30:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries.php
+1.1.31:
+    - 'Galleries logic refactoring'
+1.1.32:
+    - 'Galleries logic refactoring NEW'
+1.1.33:
+    - 'Galleries new method'
+1.1.34:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_2.php
+1.1.35:
+    - 'Updated flyers file lang versions'
+1.1.36:
+    - 'Galleries download name fix'
+1.1.37:
+    - 'Videos new type'
+1.1.38:
+    - 'Updated table pensoft_media_pressreleases'
+    - builder_table_update_pensoft_media_pressreleases.php
+1.1.39:
+    - 'Updated table pensoft_media_flyers 3'
+    - builder_table_update_pensoft_media_flyers_3.php
+1.1.40:
+    - 'Created categories'
+1.1.41:
+    - 'Created categories table'
+    - create_categories_table.php
+1.1.42:
+    - 'Update tb pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_4.php
+1.1.43:
+    - 'Update tb pensoft_media_flyers'
+    - builder_table_update_pensoft_media_newsletters_2.php
+1.1.44:
+    - 'fix language field'
+1.1.45:
+    - 'Updated table pensoft_media_webinars'
+1.1.46:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_2.php
+1.1.47:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_3.php
+1.1.48:
+    - 'Updated table pensoft_media_galleries'
+    - builder_table_update_pensoft_media_galleries_4.php
+1.1.49:
+    - 'Updated table pensoft_media_galleries'
+1.1.50:
+    - 'Updated table pensoft_media_galleries'
+    - update_pensoft_media_galleries.php
+1.1.51:
+    - 'Created table pensoft_media_webinars_categories'
+    - create_webinars_categories_table.php
+1.1.52:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_3.php
+1.1.53:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_4.php
+1.1.54:
+    - 'Updated table pensoft_media_webinars_categories'
+    - builder_table_update_pensoft_media_webinars_categories.php
+1.2.0:
+    - 'Fix migrations'
+1.2.1:
+    - 'Add webinars full screen'
+1.2.2:
+    - 'Presentations multi lang'
+1.2.3:
+    - 'Brand manual in Logos'
+1.2.4:
+    - 'Updated pensoft_media_documents'
+    - builder_table_create_pensoft_media_documents.php
+1.2.5:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_5.php
+1.2.6:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_6.php
+1.2.7:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_7.php
+1.2.8:
+    - 'Updated table pensoft_media_flyers'
+1.2.9:
+    - 'Updated table pensoft_media_flyers'
+1.2.10:
+    - 'Created table pensoft_media_videos_categories'
+    - builder_table_create_pensoft_media_videos_categories.php
+1.2.11:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_5.php
+1.2.12:
+    - 'Videos categories'
+1.2.13:
+    - 'Zip field logos'
+1.2.14:
+    - 'Created table pensoft_media_press_categories'
+    - builder_table_create_pensoft_media_press_categories.php
+1.2.15:
+    - 'Updated table pensoft_media_pressreleases'
+    - builder_table_update_pensoft_media_pressreleases_2.php
+1.2.16:
+    - 'Convert Embed Vimeo'
+1.2.17:
+    - 'Convert Embed Vimeo fix'
+1.2.18:
+    - 'Created table pensoft_media_podcasts'
+    - builder_table_create_pensoft_media_podcasts.php
+1.2.19:
+    - 'Updated table pensoft_media_podcasts'
+    - builder_table_update_pensoft_media_podcasts.php
+1.2.20:
+    - 'Updated table pensoft_media_graphics'
+    - builder_table_update_pensoft_media_graphics.php
+1.2.21:
+    - 'Updated table pensoft_media_graphics'
+1.2.22:
+    - 'Updated table pensoft_media_presentations'
+    - builder_table_update_pensoft_media_presentations.php
+1.2.23:
+    - Permissions
+1.2.24:
+    - 'Created table pensoft_media_books'
+    - builder_table_create_pensoft_media_books.php
+1.2.25:
+    - 'Books languages'
+1.2.26:
+    - 'Updated table pensoft_media_webinars'
+    - builder_table_update_pensoft_media_webinars_5.php
+1.2.27:
+    - 'Updated table pensoft_media_videos'
+    - builder_table_update_pensoft_media_videos_6.php
+1.2.28:
+    - 'Updated table pensoft_media_podcasts'
+    - builder_table_update_pensoft_media_podcasts_2.php
+1.2.29:
+    - 'gitignore'
+1.2.30:
+    - 'Updated table pensoft_media_newsletters'
+    - builder_table_update_pensoft_media_newsletters_3.php
+1.2.31:
+    - 'Updated table pensoft_media_flyers'
+    - builder_table_update_pensoft_media_flyers_9.php
+1.2.33:
+    - 'Restore 1.2.31 entry in version.yaml'
+1.2.34:
+    - 'Make flyers_9 migration idempotent (column existence check)'
+1.2.35:
+    - 'Register add_sort_order_to_nested_models migration'
+    - add_sort_order_to_nested_models.php
+1.2.36:
+    - 'Make column-add migrations idempotent (Schema::hasColumn guards); resolve merge conflicts in podcasts_2, videos_6, webinars_5'
+1.2.37:
+    - 'Make Schema::create migrations idempotent (Schema::hasTable guards)'
+1.2.38:
+    - 'Filter books fix'
+1.2.39:
+    - 'Updated table pensoft_media_presentations'
+    - builder_table_update_pensoft_media_presentations_2.php
+1.2.40:
+    - 'Fix Videos category field so it actually saves to category_id'
+1.2.41:
+    - 'Enable reordering for Documents (Sortable trait + ReorderController); sort_order column already present'
+1.2.42:
+    - 'Add image attachment to Press Releases (preview image for link cards on the Resources page)'
+1.2.43:
+    - 'Videos: add captions track attachment and transcript column (WCAG 1.2.2)'
+    - builder_table_update_pensoft_media_videos_8.php
+1.2.44:
+    - 'Fix Videos save failing when Category is left empty (Nullable trait on category_id)'
+1.2.45:
+    - 'Fix 1.0.8 migration failing on fresh install (no model query before sort_order exists)'
+1.2.46:
+    - 'Add Documents Categories and optional category relation on Documents'
+    - builder_table_create_pensoft_media_documents_categories.php
+    - builder_table_update_pensoft_media_documents.php
+1.2.47:
+    - 'Podcasts: add optional YouTube URL (embedded like Videos)'
+    - builder_table_update_pensoft_media_podcasts_3.php
