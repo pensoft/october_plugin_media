@@ -4,6 +4,10 @@ fields:
     span: left
     required: 1
     type: text
+  url:
+    label: 'URL'
+    span: left
+    type: text
   presentation_image:
     label: 'Presentation image'
     mode: image
@@ -24,4 +28,13 @@ fields:
       mode: crop
       extension: auto
     required: 1
+    type: fileupload
+  file_lang_versions:
+    label: 'File language versoins'
+    mode: file
+    useCaption: true
+    thumbOptions:
+        mode: crop
+        extension: auto
+    span: auto
     type: fileupload

@@ -1,0 +1,10 @@
+name: Documents
+form: $/pensoft/media/models/documents/fields.yaml
+modelClass: Pensoft\Media\Models\Documents
+defaultRedirect: pensoft/media/documents
+create:
+    redirect: 'pensoft/media/documents/update/:id'
+    redirectClose: pensoft/media/documents
+update:
+    redirect: pensoft/media/documents
+    redirectClose: pensoft/media/documents

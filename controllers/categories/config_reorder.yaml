@@ -1,0 +1,15 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Model Class name
+modelClass: Pensoft\Media\Models\Category
+
+# Key column name to use for the sort order
+orderColumn: sort_order
+
+# Title to use for the reorder page
+title: Reorder Categories
+
+# The attribute on the model to use for the display name
+nameFrom: name

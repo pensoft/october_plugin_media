@@ -1,0 +1,5 @@
+title: PressCategories
+modelClass: Pensoft\Media\Models\PressCategory
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

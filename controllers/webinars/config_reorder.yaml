@@ -1,4 +1,5 @@
 title: Webinars
+nameFrom: name
 modelClass: Pensoft\Media\Models\Webinars
 toolbar:
     buttons: reorder_toolbar

@@ -17,3 +17,9 @@ columns:
     vimeo_url:
         label: 'Vimeo URL'
         type: text
+    country:
+        label: Country
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/pensoft/media/partials/_country.htm

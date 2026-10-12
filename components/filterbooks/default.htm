@@ -1,0 +1,20 @@
+<form data-request="{{ __SELF__ ~ '::onFilterBooks' }}" data-request-update="'components/filter_books': '#partialBooks'">
+	<div class="row country-form ui form">
+		<div class="col-xs">
+			<div class="field">
+				<label class="sr-only" for="filter_books">Filter by language</label>
+				<select id="filter_books" name="filter_books" data-request="{{ __SELF__ ~ '::onFilterBooks'}}" data-a11y-update-message="Book list updated">
+					{% for id, countryDetails in countries %}
+					<option class="flag flag-{{ countryDetails.code }}" value="{{id}}" data-code="{{ countryDetails.code }}" {% if id == currentFilter %}selected{% endif %}>
+						{{countryDetails.language}}
+					</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div class="filter_books work_packages" id="partialBooks">
+	{% partial 'components/filter_books' records=books %}
+</div>

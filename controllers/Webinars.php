@@ -12,26 +12,26 @@ class Webinars extends Controller
      * @var array Behaviors that are implemented by this controller.
      */
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController',
-		'Backend\Behaviors\ReorderController',
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class,
+        \Backend\Behaviors\ReorderController::class,
     ];
 
     /**
      * @var string Configuration file for the `FormController` behavior.
      */
-    public $formConfig = 'config_form.yaml';
-	public $reorderConfig = 'config_reorder.yaml';
+    public string $formConfig = 'config_form.yaml';
+    public string $reorderConfig = 'config_reorder.yaml';
 
     /**
      * @var string Configuration file for the `ListController` behavior.
      */
-    public $listConfig = 'config_list.yaml';
+    public string $listConfig = 'config_list.yaml';
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Pensoft.Media', 'media-center', 'side-menu-media-webinars');
+        BackendMenu::setContext('Pensoft.Media', 'media', 'side-menu-media-webinars');
     }
 }

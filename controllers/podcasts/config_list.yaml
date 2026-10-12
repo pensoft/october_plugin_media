@@ -1,0 +1,12 @@
+list: $/pensoft/media/models/podcasts/columns.yaml
+modelClass: Pensoft\Media\Models\Podcasts
+title: Podcasts
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pensoft/media/podcasts/update/:id'

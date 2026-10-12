@@ -1,0 +1,31 @@
+{% if records %}
+<div class="galleries">
+    <div class="row newslist">
+        {% for gal in records %}
+        <div class="col-xs-12 col-md-4 news-item">
+            <a href="{{'galleries'|page}}/{{gal.id}}">
+            <div class="row news_column">
+                <img class="news-img-top" src="{{gal.images[0].getThumb(393, 223, {'mode': 'crop'})}}" title="{{ gal.name }}" alt="{{ gal.name }}">
+    
+                <div class="news-container col-xs-12">
+                    <div class="wrapper">
+                        <div class="news-title">
+                            <h3 class="card-title">{{ gal.name|length > 200 ? gal.name|striptags|slice(0, 200) ~ '...' : gal.name|raw  }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row container">
+    {{ records.render|raw }}
+</div>
+
+{% else %}
+
+<h1>No galleries to display</h1>
+
+{% endif %}

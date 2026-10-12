@@ -1,0 +1,10 @@
+name: Documents Category
+form: $/pensoft/media/models/documentscategory/fields.yaml
+modelClass: Pensoft\Media\Models\DocumentsCategory
+defaultRedirect: pensoft/media/documentscategories
+create:
+    redirect: 'pensoft/media/documentscategories/update/:id'
+    redirectClose: pensoft/media/documentscategories
+update:
+    redirect: pensoft/media/documentscategories
+    redirectClose: pensoft/media/documentscategories

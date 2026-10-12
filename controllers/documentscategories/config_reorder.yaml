@@ -1,0 +1,6 @@
+title: Reorder Documents Categories
+modelClass: Pensoft\Media\Models\DocumentsCategory
+orderColumn: sort_order
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

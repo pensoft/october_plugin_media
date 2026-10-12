@@ -1,0 +1,18 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Model Class name
+modelClass: Pensoft\Media\Models\Documents
+
+# Key column name to use for the sort order
+orderColumn: sort_order
+
+# Title to use for the reorder page
+title: Reorder Documents
+
+# The attribute on the model to use for the display name
+nameFrom: title
+
+toolbar:
+    buttons: reorder_toolbar
